@@ -1,0 +1,25 @@
+{%extends 'campusbuy/base.html' %}
+
+    {% block content %}
+
+
+<div class='container-fluid' style= 'padding-top: 10px; padding-left: 50px;'>
+
+
+	    <form method="POST" class="post-form">{% csrf_token %}
+
+	    	<fieldset>
+
+	    		<legend>NEW ADVERT</legend>
+		        {{ form.as_p }}
+		        <button type="submit" class="btn btn-success">Save</button>
+
+	 		</fieldset>
+
+	    </form>
+	  </div>
+
+
+    {% endblock %}
+
+

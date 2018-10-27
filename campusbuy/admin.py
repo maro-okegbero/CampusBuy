@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import ItemAdvert
+from .models import Category, Advert
 
-admin.site.register(ItemAdvert)
+
 # Register your models here.
+
+admin.site.register(Category)
+admin.site.register(Advert)
+

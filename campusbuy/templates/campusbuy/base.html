@@ -1,0 +1,132 @@
+{%load staticfiles%}
+<!doctype html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="An online paltform that allows Students advertise items they want to sell">
+
+        <meta name="keywords" content="Campus, Adverts, Students, Free, Sell, Buy">
+
+        <meta name="author" content="OrangeSquash-Solutions">
+
+
+                <!--CSS-->
+
+
+        <link rel="stylesheet" href="{% static 'css/toolkit-startup.css' %}" type="text/css">
+
+        <link rel="stylesheet" href="{% static 'css/application-startup.css' %}" type="text/css">
+
+
+        <link href="{% static 'font-awesome/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+
+
+    <!--JS-->
+
+     <script src="{%static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/tether.min.js' %} "></script>
+    <script src="{% static 'js/toolkit.js' %}"></script>
+    <script src="{% static 'js/application.js' %}"></script>
+
+
+
+        <title>cb.com.ng</title>
+
+
+
+        <style>
+
+
+
+            .jumbo{
+                    background: url( ../../static/images/6.png);
+                    height: 400px;
+                    width: 100%;
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    color: white;
+                    font: tahoma;
+
+                    }
+
+              /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+              /* this chunk of css is not part of the toolkit :) */
+              /* …curses ios, etc… */
+              @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+                body {
+                  width: 1px;
+                  min-width: 100%;
+                  *width: 100%;
+                }
+                #stage {
+                  height: 1px;
+                  overflow: auto;
+                  min-height: 100vh;
+                  -webkit-overflow-scrolling: touch;
+                }
+
+
+    </style>
+</head>
+
+
+<body>
+
+
+<div>
+        {%block content%}
+        {% endblock %}
+    </div>
+
+
+
+
+        
+    <footer ><!--        Footer-->
+           <div class="block block-inverse app-footer">
+ <div class="container">
+    <div class="row">
+      <div class="col-md-5 mb-5">
+        <ul class="list-unstyled list-spaced">
+          <li class="mb-2"><h6 class="text-uppercase" id="foot">About</h6></li>
+          <li class="text-muted">
+             We’ve been working on Campus Buy for the better part of 2 years and are super proud of what we’ve created. If you’d like to learn more, or are interested in a job, contact us anytime at <a href="mailto: themes@getbootstrap.com">campusbuy@gmail.com</a>.
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-2 offset-md-1 mb-5">
+        <ul class="list-unstyled list-spaced">
+          <li class="mb-2"><h6 class="text-uppercase">Contact Us</h6></li>
+          <li class="text-muted">University of Benin</li>
+          <li class="text-muted">campusBuy@gmail.com</li>
+          <li class="text-muted">08138931117</li>
+        </ul>
+      </div>
+
+      <div class="col-md-2 mb-5">
+        <ul class="list-unstyled list-spaced">
+          <li class="mb-2"><h6 class="text-uppercase">Legal</h6></li>
+          <li class="text-muted">Terms</li>
+          <li class="text-muted">Legal</li>
+          <li class="text-muted">Privacy</li>
+          <li class="text-muted">License</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </footer>
+
+
+
+
+
+</body>
+</html>
