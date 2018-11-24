@@ -1,45 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
+{% extends 'campusbuy/base.html' %}
 
-        <meta http-equiv="x-ua-compatible" content="IE=edge">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <meta name="description" content="An online paltform that allows Students advertise items they want to sell">
-
-        <meta name="keywords" content="Campus, Adverts, Students, Free, Sell, Buy">
-
-        <meta name="author" content="OrangeSquash-Solutions">
-
-    <title>Ads</title>
-
-    <!--CSS-->
-        <link rel="stylesheet" href="{% static 'css/toolkit-startup.css' %}" type="text/css">
+{% block content %}
 
 
-        <link rel="stylesheet" href="{% static 'css/application-startup.css' %}" type="text/css">
+<!--BEGINNING OF NAV-->
+
+<div class="AdNav" id="MyAdNav">
+
+    <a href="{%url 'Homepage' %}" > <span style="font-weight: bold; text-shadow: 3px 1px 5px #2f4254; font-size: 22px;">CAMPUS BUY</span></a>
+    <a href="{%url 'Homepage' %}" > Home</a>
+    <a href="{%url 'Homepage' %}#bns"> Look Up Ads</a>
+    <a href="{%url 'PostAd' %}" > Post Ads</a>
+    <a href="#footer" > About</a>
+    <input type="text" placeholder="Search..">
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <div class="container" onclick="myFunctionx(this)">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+        </div>
+    </a>
 
 
-        <link href="{% static 'font-awesome/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
+</div>
 
-
-    <!--JS-->
-
-        <script src="{%static 'js/jquery.min.js' %}"></script>
-        <script src="{% static 'js/tether.min.js' %} "></script>
-        <script src="{% static 'js/toolkit.js' %}"></script>
-        <script src="{% static 'js/application.js' %}"></script>
+<!--END OF NAV-->
 
 
 
 
-</head>
 
-<body>
+<!-- BEGINNING OF THE BODY-->
+
+    <div class="block block-secondary">
+
+        <div class="container text-xs-center">
+
+                   <div  id="adtext">{{categories.Name}}</div>
+<hr>
+
+                    <div class="cvbnm">
+
+
+                    <!--- Ads -->
+
+                        <div class="row">
+                        {% for ads in categories.advert_set.all %}
+                            <div class="card" style="width:250px; margin: 9px;">
+                              <img class="card-img-top" style="height: 193px;" src="{{MEDIA_URL}}{{ads.image.url}}" alt="Card image">
+                              <div class="card-body">
+                                  <p class="card-text"><small class="text-muted">Posted: {{ads.published_date}}</small></p>
+                                <h3 class="card-title" style="font-weight: bold;">{{ ads.Item}}</h3>
+                                  <h4  class="card-title">Vendor: {{ads.Seller_Name}}</h4>
+
+                                      <div id="ad{{ads.pk}}" class="collapse">
+
+                                          <p style="font-weight: bold; font-size:10px; border: 2px ridge #9a9a9a;">{{ads.Description}}</p>
+                                          <p style="font-weight:bold; font-size:; ">Asking-Price:<span style="color: green;"> &#8358 {{ads.Asking_Price}}</span> </p>
+                                          <p style="font-weight: bold; font-size:;">Location:<span style="color: red;"> {{ads.Location}}</span> </p>
+                                          <p style="font-weight: bold; font-size:;">Contact Me:</p>
+
+                                       </div>
+                                <a href="#ad{{ads.pk}}" class="btn btn-primary" data-toggle="collapse">See more</a>
+
+                              </div>
+
+                            </div>
+
+
+                            {% endfor %}
+
+                     </div>
 
 
 
-</body>
-</html>
+                    </div>
+        </div>
+
+
+</div>
+
+<br>
+<br>
+<br>
+
+<!--END OF THE BODY-->
+
+
+
+
+{% endblock %}

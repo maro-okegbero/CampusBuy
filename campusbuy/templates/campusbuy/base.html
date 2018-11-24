@@ -27,7 +27,6 @@
 
 
     <!--JS-->
-
      <script src="{%static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/tether.min.js' %} "></script>
     <script src="{% static 'js/toolkit.js' %}"></script>
@@ -37,65 +36,277 @@
 
         <title>cb.com.ng</title>
 
+    <style>
+
+             input,textarea, select {
+                width: 50%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #2595ff;
+                border-radius: 19px;
+                box-sizing: border-box;
+                box-shadow: 3px 5px 8px 0px #204752;
+                font-weight: bold;}
+
+            @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+
+                input,textarea, select {
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #2595ff;
+                border-radius: 19px;
+                box-sizing: border-box;
+                box-shadow: 3px 5px 8px 0px #204752;
+                font-weight: bold;}
+            }
 
 
-        <style>
 
 
 
-            .jumbo{
-                    background: url( ../../static/images/6.png);
-                    height: 400px;
-                    width: 100%;
-                    background-repeat: no-repeat;
-                    background-size: 100% 100%;
-                    color: white;
-                    font: tahoma;
+             @media screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+             input:focus, textarea:focus, select:focus {
 
-                    }
+                border-color: #66afe9;
+                outline: 0;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
+                box-shadow: inset 0 1px 8px rgba(0,0,0,.075), 0 0 24px #2681af; }
+             }
 
-              /* note: this is a hack for ios iframe for bootstrap themes shopify page */
-              /* this chunk of css is not part of the toolkit :) */
-              /* …curses ios, etc… */
-              @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
-                body {
-                  width: 1px;
-                  min-width: 100%;
-                  *width: 100%;
+            input[type=submit] {
+                width: 100%;
+                background-color: #2595ff;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+                background-color: #45a049f;
+            }
+
+            label{
+
+            font-weight: bold;
+            }
+
+
+
+
+            .cvbnm{
+                background-color:#f2f2f2;
+                padding:35px;
+                border-radius:7px;
+
+            }
+
+/*! Code for the Navbar in New_Ad and Ads */
+
+            .AdNav{
+
+                background-color: #2595ff;
+                overflow : hidden;
+                transition: .5s;
+                position: fixed;
+                top: 0;
+                right: 0;
+                left: 0;
+                z-index: 1;
+                height: 47px;
+            }
+
+            .AdNav a{
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+                text-shadow: 0px -1px 4px black;
+            }
+
+            .AdNav a:hover{
+                background-color: #2595ff;
+                color: black;
+            }
+
+            .AdNav .icon{
+                display: none;
+
+            }
+
+            .AdNav input[type=text] {
+                float: right;
+                width: 30%;
+                padding: 6px;
+                border: none;
+                margin-top: 8px;
+                margin-bottom: 4px;
+                margin-right: 16px;
+                font-size: 17px;
+
+
+            }
+
+
+
+            @media screen and (max-width: 600px)and (-webkit-min-device-pixel-ratio: 2){
+                .AdNav a:not(:first-child),.AdNav input[type=text]  {display:none;}
+
+                .AdNav a.icon{
+                    float: right;
+                    display: block;
+                    background-color: ash;
+
                 }
-                #stage {
-                  height: 1px;
-                  overflow: auto;
-                  min-height: 100vh;
-                  -webkit-overflow-scrolling: touch;
-                }
+            }
 
+
+            @media screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+              .AdNav.responsive {position: fixed; height: 316px;}
+              .AdNav.responsive input[type=text]{position: fixed;}
+              .AdNav.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+                transition: .5s;}
+              }
+
+              .AdNav.responsive a{
+                float: none;
+                display: block;
+                text-align: left;
+                text-shadow: 0px -1px 4px #2f4254;
+
+              }
+
+
+              .AdNav.responsive input[type=text]{
+                 float: none;
+                 display: block;
+                 text-align: left;
+                 padding: 14px;
+                 width: 30%;
+                 margin: 12px;
+                 border-radius: 0px;
+                 height: 12px;}
+
+
+
+              /*! End of Code for the Navbar in New_Ad and Ads */
+
+
+
+            #adtext{
+
+                font-weight: bold;
+                font-size: 21px;
+                text-align: center;
+                font-family: sans-serif;
+                text-shadow: 2px -1px 3px black;
+                color: #5bc0de;}
+
+
+
+/*! Code for the animated toggle button at the Navbar in New_Ad and Ads */
+
+
+
+             .container {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .bar1, .bar2, .bar3 {
+            width: 21px;
+            height: 2px;
+            background-color: #e6e6e6;
+            margin: 6px 0;
+            transition: 0.4s;
+            box-shadow: 1px -1px 3px black;
+        }
+
+        /* Rotate first bar */
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+            transform: rotate(-45deg) translate(-9px, 6px) ;
+        }
+
+        /* Fade out the second bar */
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        /* Rotate last bar */
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+            transform: rotate(45deg) translate(-8px, -8px) ;
+        }
+
+        /*! End of Code for the animated toggle button for the Navbar in New_Ad and Ads */
+
+
+
+.btn-success:hover {
+    background-color:#007cf1; !important
+    border-color: #007cf1;
+}
 
     </style>
+
+
+
+    <script>
+
+        function myFunction() {
+    var x = document.getElementById("MyAdNav");
+    if (x.className === "AdNav") {
+        x.className += " responsive";
+    } else {
+        x.className = "AdNav";
+    }
+}
+
+        function myFunctionx(x) {
+    x.classList.toggle("change");
+}
+
+    </script>
+
+
+cd mysite
+
 </head>
 
 
 <body>
 
 
-<div>
+
         {%block content%}
         {% endblock %}
-    </div>
+
 
 
 
 
         
-    <footer ><!--        Footer-->
-           <div class="block block-inverse app-footer">
+    <footer id="footer"><!--        Footer-->
+           <div class="block block-inverse footer">
  <div class="container">
     <div class="row">
       <div class="col-md-5 mb-5">
         <ul class="list-unstyled list-spaced">
           <li class="mb-2"><h6 class="text-uppercase" id="foot">About</h6></li>
           <li class="text-muted">
-             We’ve been working on Campus Buy for the better part of 2 years and are super proud of what we’ve created. If you’d like to learn more, or are interested in a job, contact us anytime at <a href="mailto: themes@getbootstrap.com">campusbuy@gmail.com</a>.
+             We’ve been working on Campus Buy for the better part of 2 years and are super proud of what we’ve created. If you’d like to learn more, or are interested in a job, contact us anytime at <a href="https://www.campusbuy@gmail.com">campusbuy@gmail.com</a>.
           </li>
         </ul>
       </div>

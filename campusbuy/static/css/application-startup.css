@@ -145,6 +145,7 @@
 }
 .btn-lg:not(.btn-block) {
   padding: 12px 50px;
+  margin: 10px;
 }
 @media (min-width: 768px) {
   .btn-lg:not(.btn-block) {

@@ -1,24 +1,60 @@
 {%extends 'campusbuy/base.html' %}
 
+{%load crispy_forms_tags %}
+
     {% block content %}
 
 
-<div class='container-fluid' style= 'padding-top: 10px; padding-left: 50px;'>
+<div class="AdNav" id="MyAdNav">
+
+    <a href="{%url 'Homepage' %}" > <span style="font-weight: bold; text-shadow: 3px 1px 5px #2f4254; font-size: 22px;">CAMPUS BUY</span></a>
+    <a href="{%url 'Homepage' %}" > Home</a>
+    <a href="{%url 'Homepage'%}#bns"> Look Up Ads</a>
+    <a href="{%url 'PostAd' %}" > Post Ads</a>
+    <a href="#footer" > About</a>
+     <input type="text" placeholder="Search...">
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <div class="container" onclick="myFunctionx(this)">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+        </div>
+    </a>
 
 
-	    <form method="POST" class="post-form">{% csrf_token %}
+</div>
 
-	    	<fieldset>
+<br>
+<br>
+<br>
 
-	    		<legend>NEW ADVERT</legend>
+<div class="container">
+
+<div class="cvbnm">
+
+	    <form class="MyForm-control" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+
+	    		<h4>Post Your Ad!</h4>
+
+				<hr>
+
 		        {{ form.as_p }}
-		        <button type="submit" class="btn btn-success">Save</button>
+		        <input type="submit"  class="btn btn-success">
 
-	 		</fieldset>
 
-	    </form>
-	  </div>
 
+	     </form>
+
+
+</div>
+</div>
+
+
+
+
+<br>
+<br>
 
     {% endblock %}
 

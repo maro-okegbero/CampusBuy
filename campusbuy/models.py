@@ -72,4 +72,3 @@ class Advert(models.Model):
         return self.Seller_Name + '- ' + self.Item + '- ' + self.Location
 
 
-

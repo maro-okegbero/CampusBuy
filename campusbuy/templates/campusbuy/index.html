@@ -3,36 +3,38 @@
 
 
 
-<body>
-
 
 <div class="stage-shelf stage-shelf-right hidden" id="sidebar">
   <ul class="nav nav-bordered nav-stacked flex-column">
+    <li class="nav-item">
+      <input type="text"placeholder="Search here">
+    </li>
     <li class="nav-header">MENU</li>
     <li class="nav-item">
-      <a class="nav-link active" href="index.html">Home</a>
+      <a class="nav-link active" href="{%url 'Homepage'%}">Home</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="{%url 'PostAd' %}">POST AD</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#bns">CHECK FOR AD</a>
+      <a class="nav-link" href="#footer">ABOUT US</a>
     </li>
     <li class="nav-divider"></li>
-    <li class="nav-header">Docs</li>
+    <li class="nav-header">Categories</li>
+
+    {% for category in Categories %}
     <li class="nav-item">
-      <a class="nav-link" href="docs/index.html">Toolkit</a>
+      <a class="nav-link" href="{{ category.Name }}">{{category.Name}}</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="http://getbootstrap.com">Bootstrap</a>
-    </li>
+    {% endfor %}
+
   </ul>
 </div>
 
-<div class="stage" id="stage">
+  <div class="stage" id="stage">
 
 <div class="block block-inverse block-fill-height app-header"
-     style="background-image: url(../../static/images/3.png);">
+     style="background-image: url(../../static/images/background.jpg); background-size: contain; background-origin: content-box;">
 
   <div class="container py-4 fixed-top app-navbar">
   <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm">
@@ -45,8 +47,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand mr-auto" href="">
-      <strong style="background: #fff; padding: 12px; border-radius: 4px; color: #28669F;">Campus Buy</strong>
+    <a class="navbar-brand mr-auto" href="{%url 'Homepage' %}">
+      <strong style="background: #fff; padding: 12px; border-radius: 4px; color: #2595ff; text-shadow: 0px -1px 1px black;">CAMPUS BUY</strong>
     </a>
 
     <div class="hidden-sm-down text-uppercase">
@@ -71,9 +73,11 @@
   <div class="block-xs-middle pb-5">
     <div class="container">
       <div class="row">
-        <div class="col-sm-10 col-lg-6">
+        <div class="col-sm-10 col-lg-6" style="padding: 20px;">
+          <div style="background: rgba(0, 0, 0, 0.5);" >
           <h1 class="block-titleData frequency">WELCOME TO CAMPUS BUY</h1>
           <p class="lead mb-4 text-muted">Reach a larger Audience and sell your stuff faster.</p>
+          </div>
             <a href="{%url 'PostAd' %}"><button class="btn btn-primary btn-lg">Post your ad</button></a>
             <a href="#bns"><button class="btn btn-primary btn-lg">Look up ads</button></a>
 
@@ -84,7 +88,7 @@
 </div>
 
 
-         	<div class="block block-secondary app-block-marketing-grid">
+         	<div class="block block-secondary ">
 
 
 
@@ -100,14 +104,14 @@
     </div>
 
 
-    <div class="row app-marketing-grid">
+    <div class="row ">
 
 {% for category in Categories %}
 
 
                   <div class="col-md-4 px-4 mb-5">
-                  <a href="#"><img style="height: 193px;" class="mb-1" src="{{MEDIA_URL}}{{category.Category_Logo.url}}"></a>
-                <p><strong>{{category.Name}}</strong>{{category.Details}}</p>
+                  <a href="{{ category.Name }}"><img style="height: 94px;" class="mb-1" src="{{MEDIA_URL}}{{category.Category_Logo.url}}"></a>
+                <p><strong>{{category.Name}}</strong>  {{category.Details}}</p>
               </div>
       {% endfor %}
 
