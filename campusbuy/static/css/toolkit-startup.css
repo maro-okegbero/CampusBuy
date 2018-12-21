@@ -316,7 +316,7 @@ a {
   color: #2595FF;
   text-decoration: none; }
   a:focus, a:hover {
-    color: #006fd8;
+    color: #000000;
     text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {

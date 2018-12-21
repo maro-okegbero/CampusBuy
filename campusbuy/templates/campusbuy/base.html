@@ -49,7 +49,7 @@
                 box-shadow: 3px 5px 8px 0px #204752;
                 font-weight: bold;}
 
-            @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+            @media (max-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
 
                 input,textarea, select {
                 width: 100%;
@@ -67,7 +67,7 @@
 
 
 
-             @media screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+             @media screen and (max-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
              input:focus, textarea:focus, select:focus {
 
                 border-color: #66afe9;
@@ -95,6 +95,28 @@
 
             font-weight: bold;
             }
+
+
+
+            .pagination {
+
+                display: inline-block;
+            }
+
+            .pagination a {
+                
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none;
+            }
+
+            .pagination a.active {
+                background-color: #ff3167ab;
+                color: #d9534f;
+            }
+
+            .pagination a:hover:not(.active) {background-color: #ddd;}
 
 
 
@@ -155,9 +177,28 @@
 
             }
 
+                  #bg{
+                    background-image: url(../../static/images/background.jpg);
+
+                    }
 
 
-            @media screen and (max-width: 600px)and (-webkit-min-device-pixel-ratio: 2){
+                   @media screen and (max-width: 500px)and (-webkit-min-device-pixel-ratio: 2){
+                     #bg{
+                        background-size: 100% 100%;
+                        height: 67vh;
+                        margin: 3px auto 0;}
+                        }
+
+
+                   @media screen and (max-width: 500px)and (-webkit-min-device-pixel-ratio: 2){
+
+                        .col-sm-10, col-lg-6{
+                            position: relative;
+                            top: 115px;}
+                        }
+
+            @media screen and (max-width: 500px)and (-webkit-min-device-pixel-ratio: 2){
                 .AdNav a:not(:first-child),.AdNav input[type=text]  {display:none;}
 
                 .AdNav a.icon{
@@ -169,8 +210,8 @@
             }
 
 
-            @media screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
-              .AdNav.responsive {position: fixed; height: 316px;}
+            @media screen and (max-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
+              .AdNav.responsive {position: fixed; height: 316px;}.
               .AdNav.responsive input[type=text]{position: fixed;}
               .AdNav.responsive a.icon {
                 position: absolute;
@@ -281,7 +322,7 @@
     </script>
 
 
-cd mysite
+
 
 </head>
 

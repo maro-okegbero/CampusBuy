@@ -12,7 +12,9 @@
     <a href="{%url 'Homepage'%}#bns"> Look Up Ads</a>
     <a href="{%url 'PostAd' %}" > Post Ads</a>
     <a href="#footer" > About</a>
-     <input type="text" placeholder="Search...">
+    <form method="get" action="{%url 'search' %}">
+      <input type="text" name="q" placeholder="Search here..">
+      </form>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <div class="container" onclick="myFunctionx(this)">
               <div class="bar1"></div>

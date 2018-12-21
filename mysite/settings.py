@@ -25,7 +25,7 @@ SECRET_KEY = '$-1%w5fwoea+$_h_iqb!&5-5*vw^puya74k(@e09cs1zbd2kyb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'campusbuy.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'campusbuy.pythonanywhere.com', '192.168.43.82']
 
 
 # Application definition
@@ -39,7 +39,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'campusbuy',
     'crispy_forms',
-]
+    'search',
+    'django_elasticsearch_dsl',
+
+    ]
+
+ELASTICSEARCH_DSL = {
+
+    'default': {
+        'hosts': 'localhost:9200'
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,9 +86,13 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'campusbuy',
+        'USER': 'code_majestic',
+        'PASSWORD': 'orangesquash',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

@@ -12,7 +12,9 @@
     <a href="{%url 'Homepage' %}#bns"> Look Up Ads</a>
     <a href="{%url 'PostAd' %}" > Post Ads</a>
     <a href="#footer" > About</a>
-    <input type="text" placeholder="Search..">
+    <form method="get" action="{%url 'search' %}">
+      <input type="text" name="q" placeholder="Search here..">
+      </form>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <div class="container" onclick="myFunctionx(this)">
               <div class="bar1"></div>
@@ -36,7 +38,8 @@
 
         <div class="container text-xs-center">
 
-                   <div  id="adtext">{{categories.Name}}</div>
+
+                   <div  id="adtext">{{category}}</div>
 <hr>
 
                     <div class="cvbnm">
@@ -45,7 +48,7 @@
                     <!--- Ads -->
 
                         <div class="row">
-                        {% for ads in categories.advert_set.all %}
+                        {% for ads in categories %}
                             <div class="card" style="width:250px; margin: 9px;">
                               <img class="card-img-top" style="height: 193px;" src="{{MEDIA_URL}}{{ads.image.url}}" alt="Card image">
                               <div class="card-body">
@@ -53,15 +56,17 @@
                                 <h3 class="card-title" style="font-weight: bold;">{{ ads.Item}}</h3>
                                   <h4  class="card-title">Vendor: {{ads.Seller_Name}}</h4>
 
+
                                       <div id="ad{{ads.pk}}" class="collapse">
 
                                           <p style="font-weight: bold; font-size:10px; border: 2px ridge #9a9a9a;">{{ads.Description}}</p>
                                           <p style="font-weight:bold; font-size:; ">Asking-Price:<span style="color: green;"> &#8358 {{ads.Asking_Price}}</span> </p>
                                           <p style="font-weight: bold; font-size:;">Location:<span style="color: red;"> {{ads.Location}}</span> </p>
-                                          <p style="font-weight: bold; font-size:;">Contact Me:</p>
+                                          <a href="tel: {{ads.Phone_Number}}"style="font-weight: bold; text-decoration:none;">Contact Me</a>
 
                                        </div>
-                                <a href="#ad{{ads.pk}}" class="btn btn-primary" data-toggle="collapse">See more</a>
+                                        <br>
+                                <a href="#ad{{ads.pk}}" class="btn btn-primary" data-toggle="collapse" style="focus{color:white;}">See more</a>
 
                               </div>
 
@@ -72,10 +77,48 @@
 
                      </div>
 
+                        <br>
+                        <br>
 
+
+                                {% if categories.has_other_pages %}
+            <div class="pagination">
+              {% if categories.has_previous %}
+                <a href="?page={{ categories.previous_page_number }}">&laquo;</a>
+              {% else %}
+                <a class="disabled"><span>&laquo;</span></a>
+              {% endif %}
+              {% for i in categories.paginator.page_range %}
+                {% if categories.number == i %}
+                  <a class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
+                {% else %}
+                  <a href="?page={{ i }}">{{ i }}</a>
+                {% endif %}
+              {% endfor %}
+              {% if categories.has_next %}
+                <a href="?page={{ categories.next_page_number }}">&raquo;</a>
+              {% else %}
+                <a class="disabled"><span>&raquo;</span></a>
+              {% endif %}
+            </div>
+          {% endif %}
 
                     </div>
         </div>
+
+
+
+
+
+                        
+                        
+
+
+
+
+
+
+
 
 
 </div>
