@@ -3,16 +3,14 @@
 {% block content %}
 
 
-<!--BEGINNING OF NAV-->
-
 <div class="AdNav" id="MyAdNav">
 
     <a href="{%url 'Homepage' %}" > <span style="font-weight: bold; text-shadow: 3px 1px 5px #2f4254; font-size: 22px;">CAMPUS BUY</span></a>
     <a href="{%url 'Homepage' %}" > Home</a>
-    <a href="{%url 'Homepage' %}#bns"> Look Up Ads</a>
+    <a href="{%url 'Homepage'%}#bns"> Look Up Ads</a>
     <a href="{%url 'PostAd' %}" > Post Ads</a>
     <a href="#footer" > About</a>
-    <form method="get" action="{%url 'search' %}">
+    <form method="get" action="{%url 'Search' %}">
       <input type="text" name="q" placeholder="Search here..">
       </form>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -25,9 +23,6 @@
 
 
 </div>
-
-<!--END OF NAV-->
-
 
 
 

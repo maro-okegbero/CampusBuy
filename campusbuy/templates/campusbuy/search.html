@@ -51,9 +51,9 @@
                     <!--- Ads -->
 
                         <div class="row">
-                         {% for item in adverts %}
+                         {% for item in results %}
                             <div class="card" style="width:250px; margin: 9px;">
-                              <img class="card-img-top" style="height: 193px;" src="{{item.image}}" alt="Card image">
+                              <img class="card-img-top" style="height: 193px;" src="{{MEDIA_URL}}{{item.image.url}}" alt="Card image">
                               <div class="card-body">
                                   <p class="card-text"><small class="text-muted">Posted: {{item.published_date}}</small></p>
                                 <h3 class="card-title" style="font-weight: bold;">{{ item.Item}}</h3>
