@@ -2,10 +2,9 @@ from django.shortcuts import render
 from django.http import Http404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.utils import timezone
-from .models import Category, Advert
+from .models import Category
 from django.shortcuts import redirect
 from .forms import PostAdForm
-from django.contrib.postgres.search import SearchVector
 
 
 # Create your views here.
@@ -37,6 +36,8 @@ def ViewAd(request, category_name):
 
 
 
+
+
 def PostAd(request):
         if request.method == "POST":
             form = PostAdForm(request.POST, request.FILES)
@@ -52,11 +53,3 @@ def PostAd(request):
         return render(request, 'campusbuy/new_advert.html', {'form': form})
 
 
-def Search(request):
-    query = request.GET.get('q')
-    if query:
-        results = Advert.objects.annotate(search=SearchVector('Item', 'Description', 'Seller_Name'),).filter(search = query)
-    else:
-        results = Advert.objects.all()[:3]
-
-    return render(request, 'campusbuy/search.html', {'results': results})

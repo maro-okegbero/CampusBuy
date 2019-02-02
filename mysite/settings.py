@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,7 +25,7 @@ SECRET_KEY = '$-1%w5fwoea+$_h_iqb!&5-5*vw^puya74k(@e09cs1zbd2kyb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','campussbuy.pythonanywhere.com' ,'.herokuapp.com', '192.168.43.82']
+ALLOWED_HOSTS = ['127.0.0.1', 'campusbuy.pythonanywhere.com', '192.168.43.82']
 
 
 # Application definition
@@ -39,17 +38,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'campusbuy',
+    'crispy_forms',
+    'search',
+    'django_elasticsearch_dsl',
 
     ]
 
+ELASTICSEARCH_DSL = {
 
-
-
-
+    'default': {
+        'hosts': 'localhost:9200'
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -84,7 +87,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
 'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'campusbuy',
         'USER': 'postgres',
         'PASSWORD': 'orangesquash',
@@ -135,8 +138,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = 'djangoproject\mysite\campusbuy\static'
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-
-

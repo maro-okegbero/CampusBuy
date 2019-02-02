@@ -8,7 +8,7 @@ import PIL.Image as Image
 
 class Category(models.Model):
 
-    Name = models.CharField(max_length=20, null=True, blank=True)
+    Name = models.CharField(max_length=30, null=True, blank=True)
     Details = models.CharField(max_length=100, default="Default")
     Category_Logo = models.ImageField(max_length=100, upload_to='uploads')
 
