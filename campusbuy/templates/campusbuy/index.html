@@ -7,10 +7,10 @@
 <div class="stage-shelf stage-shelf-right hidden" id="sidebar">
   <ul class="nav nav-bordered nav-stacked flex-column">
     <li class="nav-item">
-
-     <form method="get" action="{%url 'search' %}">
-      <input type="text" name="q" placeholder="Search here..">
+     <form method="get" action="{%url 'Search' %}">
+       <input type= "text" name="q" placeholder="Search here..">
       </form>
+    </li>
      <li class="nav-item">
       <a class="nav-link active" href="{%url 'Homepage'%}">Home</a>
     </li>
@@ -66,7 +66,7 @@
           <a class="nav-link" href="#bns">Look Up AD!</a>
         </li>
         <li class="nav-item px-1">
-          <a class="nav-link" href="{%url 'search' %}">Search</a>
+          <a class="nav-link" href="{%url 'Search' %}">Search</a>
         </li>
       </ul>
     </div>
@@ -75,17 +75,17 @@
 
   <div class="block-xs-middle pb-5">
     <div class="container">
-      <div class="row">
-        <div class="col-sm-10 col-lg-6" style="padding: 20px;">
-          <div style="background: rgba(0, 0, 0, 0.5);" >
-          <h1 class="block-titleData frequency">WELCOME TO CAMPUS BUY</h1>
-          <p class="lead mb-4 text-muted">.</p>
-          </div>
-            <a href="{%url 'PostAd' %}"><button class="btn btn-pill btn-danger">Post your ad</button></a>
-            <a href="#bns"><button class="btn btn-pill btn-danger">Look up ads</button></a>
 
-        </div>
-      </div>
+
+      <div class="myheader">
+
+          <div>Buying and Selling <br>For Students <br>made easy</div>
+
+
+           <button class="btn btn-pill btn-success" type="button" name="button"> <a href="{%url 'PostAd' %}">Post your ad</a></button>
+           <button class="btn btn-pill btn-danger" type="button" name="button"><a href="#bns">Look up ads</a></button>
+       </div>
+
     </div>
   </div>
 </div>

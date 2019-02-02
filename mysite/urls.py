@@ -17,12 +17,11 @@ from django.contrib import admin
 from django.urls import include,path
 from django.conf.urls.static import static
 from django.conf import settings
-from search import views as search_views
+
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('search', search_views.search, name='search'),
     path('', include('campusbuy.urls')),
 ]
 

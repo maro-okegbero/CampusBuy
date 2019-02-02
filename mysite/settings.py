@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '$-1%w5fwoea+$_h_iqb!&5-5*vw^puya74k(@e09cs1zbd2kyb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'campusbuy.pythonanywhere.com', '192.168.43.82']
 
@@ -38,21 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'campusbuy',
-    'crispy_forms',
-    'search',
-    'django_elasticsearch_dsl',
+
 
     ]
 
-ELASTICSEARCH_DSL = {
 
-    'default': {
-        'hosts': 'localhost:9200'
-    },
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -87,7 +81,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
 'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'campusbuy',
         'USER': 'postgres',
         'PASSWORD': 'orangesquash',
