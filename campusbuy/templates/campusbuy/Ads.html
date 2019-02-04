@@ -47,10 +47,11 @@
                     <!--- Ads -->
                 <div class="col-md-4 px-4 mb-5">
 
-
+                        {% load cloudinary %}
                         {% for ads in categories %}
                             <div class="card" style="width:250px; margin: 9px;">
-                              <img class="card-img-top" style="height: 193px;" src="{{MEDIA_URL}}{{ads.image.url}}" alt="Card image">
+                              <img class="card-img-top" style="
+                              height: 193px;" src="{{MEDIA_URL}}{% cloudinary ads.image format='jpg'  height=193 crop='fill' %}" alt="Card image">
                               <div class="card-body">
                                   <p class="card-text"><small class="text-muted">Posted: {{ads.published_date}}</small></p>
                                 <h3 class="card-title" style="font-weight: bold;">{{ ads.Item}}</h3>

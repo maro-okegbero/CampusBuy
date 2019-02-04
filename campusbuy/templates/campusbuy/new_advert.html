@@ -4,6 +4,10 @@
 
     {% block content %}
 
+    {% load cloudinary%}
+
+    {% load url from future %}
+
 
 <div class="AdNav" id="MyAdNav">
 
@@ -41,8 +45,9 @@
 
 				<hr>
 
-		        {{ form.as_p }}
-		        <input type="submit"  class="btn btn-success">
+		        {{ backend_form }}
+
+		        <input type="submit"  class="btn btn-success" value="Post">
 
 
 

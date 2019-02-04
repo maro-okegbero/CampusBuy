@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from cloudinary.models import CloudinaryField
 import PIL.Image as Image
 
 
@@ -10,7 +11,7 @@ class Category(models.Model):
 
     Name = models.CharField(max_length=30, null=True, blank=True)
     Details = models.CharField(max_length=100, default="Default")
-    Category_Logo = models.ImageField(max_length=100, upload_to='uploads')
+    Category_Logo = CloudinaryField('Category_Logo')
 
     def __str__(self):
         return self.Name
@@ -34,7 +35,7 @@ class Advert(models.Model):
     Seller_Name = models.CharField(max_length=50, blank=False, null=False)
     Phone_Number = models.CharField(max_length=11, blank=False, null=False,
                                     help_text='<p style="color: red; font: italic 12px tahoma;">**Please input a working Phone Number that you can be contacted with on the fly</p>')
-    image = models.ImageField(max_length=100, upload_to='uploads')
+    image = CloudinaryField('image')
     Item = models.CharField(max_length=20, blank=False, null=False)
     Location = models.CharField(max_length=10, choices=Location_Choices, default=HALL3, blank=False)
     Description = models.TextField(max_length=250, blank=False, null=False)
