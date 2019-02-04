@@ -39,7 +39,7 @@ def ViewAd(request, category_name):
 
 
 def PostAd(request):
-    context = dict(backend_form=PostAdForm())
+        context = dict(backend_form=PostAdForm())
         if request.method == "POST":
             form = PostAdForm(request.POST, request.FILES)
             context['posted'] = form.instance
