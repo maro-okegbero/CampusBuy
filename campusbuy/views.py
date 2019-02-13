@@ -6,7 +6,7 @@ from .models import Category, Advert
 from django.shortcuts import redirect
 from .forms import PostAdForm
 from django.contrib.postgres.search import SearchVector
-from cloudinary.forms import cl_init_js_callbacks
+
 
 
 # Create your views here.
@@ -39,10 +39,9 @@ def ViewAd(request, category_name):
 
 
 def PostAd(request):
-        context = dict(backend_form=PostAdForm())
+
         if request.method == "POST":
             form = PostAdForm(request.POST, request.FILES)
-            context['posted'] = form.instance
             if form.is_valid():
                 post = form.save()
                 post.published_date = timezone.now()

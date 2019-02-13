@@ -11,6 +11,7 @@ class Category(models.Model):
 
     Name = models.CharField(max_length=30, null=True, blank=True)
     Details = models.CharField(max_length=100, default="Default")
+    # Special Cloudinary image Field
     Category_Logo = CloudinaryField('Category_Logo')
 
     def __str__(self):
@@ -35,12 +36,20 @@ class Advert(models.Model):
     Seller_Name = models.CharField(max_length=50, blank=False, null=False)
     Phone_Number = models.CharField(max_length=11, blank=False, null=False,
                                     help_text='<p style="color: red; font: italic 12px tahoma;">**Please input a working Phone Number that you can be contacted with on the fly</p>')
+    # Special Cloudinary image Field
     image = CloudinaryField('image')
     Item = models.CharField(max_length=20, blank=False, null=False)
     Location = models.CharField(max_length=10, choices=Location_Choices, default=HALL3, blank=False)
     Description = models.TextField(max_length=250, blank=False, null=False)
     Asking_Price = models.CharField(max_length=20, blank=False, null=False)
     published_date = models.DateTimeField(blank=False, default=timezone.now)
+
+    def __unicode__(self):
+        try:
+            public_id = self.image.public_id
+        except AttributeError:
+            public_id = ''
+        return "Photo <%s:%s>" % (self.title, public_id)
 
     def published(self):
         self.published_date = timezone.now()
