@@ -31,7 +31,7 @@ def ViewAd(request, category_name):
         except EmptyPage:
             AdList = paginator.page(paginator.num_pages)
         context = {'category': category_name, 'categories': AdList}
-        return render(request, 'campusbuy/ads.html', context)
+        return render(request, 'campusbuy/my_ads.html', context)
 
     except Category.DoesNotExist:
         raise Http404("Category Does Not Exist")
