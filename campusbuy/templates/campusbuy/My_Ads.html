@@ -11,7 +11,7 @@
     <a href="{%url 'Homepage'%}#bns"> Look Up Ads</a>
     <a href="{%url 'PostAd' %}" > Post Ads</a>
     <a href="#footer" > About</a>
-    <form method="get" action="{%url 'Search' %}">
+    <form method="get" action="{%url 'search' %}">
       <input type="text" name="q" placeholder="Search here..">
       </form>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -50,7 +50,7 @@
 
 
                         {% for ads in categories %}
-                            <div class="card" style="width:250px; margin: 9px;n">
+                            <div class="card" style="width:250px; margin: 9px;">
                               {% cloudinary ads.image THUMBNAIL %}
                               <div class="card-body">
                                   <p class="card-text"><small class="text-muted">Posted: {{ads.published_date}}</small></p>

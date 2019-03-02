@@ -54,7 +54,7 @@ def PostAd(request):
         return render(request, 'campusbuy/new_advert.html', {'form': form})
 
 
-def Search(request):
+def search(request):
     query = request.GET.get('q')
     if query:
         results = Advert.objects.annotate(search=SearchVector('Item', 'Description', 'Seller_Name'),).filter(search = query)

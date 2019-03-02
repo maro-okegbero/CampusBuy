@@ -1,0 +1,106 @@
+{%extends 'campusbuy/base.html' %}
+
+    {% block content%}
+
+        <!--BEGINNING OF NAV-->
+
+        <div class="AdNav" id="MyAdNav">
+
+            <a href="{%url 'Homepage' %}" > <span style="font-weight: bold; text-shadow: 3px 1px 5px #2f4254; font-size: 22px;">CAMPUS BUY</span></a>
+            <a href="{%url 'Homepage' %}" > Home</a>
+            <a href="{%url 'Homepage' %}#bns"> Look Up Ads</a>
+            <a href="{%url 'PostAd' %}" > Post Ads</a>
+            <a href="#footer" > About</a>
+
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <div class="container" onclick="myFunctionx(this)">
+                      <div class="bar1"></div>
+                      <div class="bar2"></div>
+                      <div class="bar3"></div>
+                </div>
+            </a>
+
+
+        </div>
+
+        <!--END OF NAV-->
+
+
+
+
+
+
+        <!-- BEGINNING OF THE BODY-->
+
+    <div class="block block-secondary">
+
+        <div class="container text-xs-center">
+
+
+            <form method="get">
+                <input id="q" name="q" type="text" placeholder="search here...">
+            </form>
+
+                <br>
+                   <div  id="adtext">Results</div>
+<hr>
+
+                    <div class="cvbnm">
+
+
+                    <!--- Ads -->
+
+                        <div class="row">
+                         {% for item in results %}
+                            <div class="card" style="width:250px; margin: 9px;">
+                              <img class="card-img-top" style="height: 193px;" src="{{MEDIA_URL}}{{Item.image.url}}" alt="Card image">
+                              <div class="card-body">
+                                  <p class="card-text"><small class="text-muted">Posted: {{item.published_date}}</small></p>
+                                <h3 class="card-title" style="font-weight: bold;">{{ item.Item}}</h3>
+                                  <h4  class="card-title">Vendor: {{item.Seller_Name}}</h4>
+
+                                      <div id="ad{{item.id}}" class="collapse">
+
+                                          <p style="font-weight: bold; font-size:10px; border: 2px ridge #9a9a9a;">{{item.Description}}</p>
+                                          <p style="font-weight:bold; font-size:; ">Asking-Price:<span style="color: green;"> &#8358 {{item.Asking_Price}}</span> </p>
+                                          <p style="font-weight: bold; font-size:;">Location:<span style="color: red;"> {{item.Location}}</span> </p>
+                                          <a href="tel: {{item.Phone_Number}}"style="font-weight: bold; text-decoration:none;">Contact Me</a>
+
+                                       </div>
+                                        <br>
+                                <a href="#ad{{item.id}}" class="btn btn-primary" style="focus, hover {color: #fff;}" data-toggle="collapse">See more</a>
+
+                              </div>
+
+                            </div>
+
+                                {% empty %}
+                                        <h4> NO AD MATCHED YOUR SEARCH</h4>
+
+
+                            {% endfor %}
+
+                     </div>
+
+
+
+                    </div>
+        </div>
+
+
+</div>
+
+<br>
+<br>
+<br>
+
+<!--END OF THE BODY-->
+
+
+
+
+
+
+
+
+    {% endblock %}
