@@ -35,6 +35,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', '192.168.43.82']
 # Application definition
 
 INSTALLED_APPS = [
+    'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

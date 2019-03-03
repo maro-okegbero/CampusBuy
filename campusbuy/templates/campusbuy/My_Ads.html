@@ -50,10 +50,11 @@
 
 
                         {% for ads in categories %}
+                            {% load humanize %}
                             <div class="card" style="width:250px; margin: 9px;">
                               {% cloudinary ads.image THUMBNAIL %}
                               <div class="card-body">
-                                  <p class="card-text"><small class="text-muted">Posted: {{ads.published_date}}</small></p>
+                                  <p class="card-text"><small class="text-muted">Posted: {{ ads.published_date|naturaltime }}</small></p>
                                 <h3 class="card-title" style="font-weight: bold;">{{ ads.Item}}</h3>
                                   <h4  class="card-title">Vendor: {{ads.Seller_Name}}</h4>
 
@@ -61,7 +62,7 @@
                                       <div id="ad{{ads.pk}}" class="collapse">
 
                                           <p style="font-weight: bold; font-size:10px; border: 2px ridge #9a9a9a;">{{ads.Description}}</p>
-                                          <p style="font-weight:bold; font-size:; ">Asking-Price:<span style="color: green;"> &#8358 {{ads.Asking_Price}}</span> </p>
+                                          <p style="font-weight:bold; font-size:; ">Asking-Price:<span style="color: green;"> &#8358 {{ads.Asking_Price|intcomma}}</span> </p>
                                           <p style="font-weight: bold; font-size:;">Location:<span style="color: red;"> {{ads.Location}}</span> </p>
                                           <a href="tel: {{ads.Phone_Number}}"style="font-weight: bold; text-decoration:none;">Contact Me</a>
 

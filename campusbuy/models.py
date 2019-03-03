@@ -41,7 +41,7 @@ class Advert(models.Model):
     Item = models.CharField(max_length=20, blank=False, null=False)
     Location = models.CharField(max_length=10, choices=Location_Choices, default=HALL3, blank=False)
     Description = models.TextField(max_length=250, blank=False, null=False)
-    Asking_Price = models.CharField(max_length=20, blank=False, null=False)
+    Asking_Price = models.IntegerField(blank=False, null=False)
     published_date = models.DateTimeField(blank=False, default=timezone.now)
 
     def __unicode__(self):
