@@ -1,10 +1,10 @@
 {%extends 'campusbuy/base.html' %}
-
     {% block content%}
+    {% load cloudinary %}
 
         <!--BEGINNING OF NAV-->
 
-        <div class="AdNav" id="MyAdNav">
+        <div style="font-family:'Coda', cursive; " class="AdNav" id="MyAdNav">
 
             <a href="{%url 'Homepage' %}" > <span style="font-weight: bold; text-shadow: 3px 1px 5px #2f4254; font-size: 22px;">CAMPUS BUY</span></a>
             <a href="{%url 'Homepage' %}" > Home</a>
@@ -37,12 +37,16 @@
         <div class="container text-xs-center">
 
 
-            <form method="get">
-                <input id="q" name="q" type="text" placeholder="search here...">
-            </form>
+            <form method="get" >
+               <div class="search">
+                    <span <i class="fa fa-search"></span>
+                    <input type="text" name="q" placeholder="search">
+               </div>
+
+      </form>
 
                 <br>
-                   <div  id="adtext">Results</div>
+                   <div style="font-family:'Coda', cursive; " id="adtext">Results</div>
 <hr>
 
                     <div class="cvbnm">
@@ -53,7 +57,7 @@
                         <div class="row">
                          {% for item in results %}
                             <div class="card" style="width:250px; margin: 9px;">
-                              <img class="card-img-top" style="height: 193px;" src="{{MEDIA_URL}}{{Item.image.url}}" alt="Card image">
+                             {% cloudinary ads.image THUMBNAIL %}
                               <div class="card-body">
                                   <p class="card-text"><small class="text-muted">Posted: {{item.published_date}}</small></p>
                                 <h3 class="card-title" style="font-weight: bold;">{{ item.Item}}</h3>

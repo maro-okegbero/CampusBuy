@@ -5,15 +5,19 @@
     {% block content %}
 
 
-<div class="AdNav" id="MyAdNav">
+<div style="font-family:'Coda', cursive; " class="AdNav" id="MyAdNav">
 
     <a href="{%url 'Homepage' %}" > <span style="font-weight: bold; text-shadow: 3px 1px 5px #2f4254; font-size: 22px;">CAMPUS BUY</span></a>
     <a href="{%url 'Homepage' %}" > Home</a>
     <a href="{%url 'Homepage'%}#bns"> Look Up Ads</a>
     <a href="{%url 'PostAd' %}" > Post Ads</a>
     <a href="#footer" > About</a>
-    <form method="get" action="{%url 'search' %}">
-      <input type="text" name="q" placeholder="Search here..">
+   <form method="get" action="{%url 'search' %}">
+               <div class="search">
+                    <span <i class="fa fa-search"></span>
+                    <input type="text" name="q" placeholder="search">
+               </div>
+
       </form>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <div class="container" onclick="myFunctionx(this)">
@@ -32,12 +36,12 @@
 
 <div class="container">
 
-<div class="cvbnm">
+<div class="wrapa">
 
 	    <form class="MyForm-control" method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 
-	    		<h4>Post Your Ad!</h4>
+	    		<h4 style="font-family:'Coda', cursive; ">Post Your Ad!</h4>
 
 				<hr>
 

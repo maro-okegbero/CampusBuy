@@ -26,6 +26,14 @@
         <link href="{% static 'font-awesome/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
 
 
+         <title>cb.com.ng</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="icon" type="image/gif" href="{% static 'images/icon.gif' %}" sizes="16x16">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Coda">
+        <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+
+
     <!--JS-->
      <script src="{%static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/tether.min.js' %} "></script>
@@ -38,7 +46,6 @@
 
 
 
-        <title>cb.com.ng</title>
 
     <style>
 
@@ -119,10 +126,26 @@
             font-weight: bold;
             }
 
+            .search {
+              position: relative;
+              margin: 0 auto ;
+              text-align: center;
+            }
+            .search input {
+              text-indent: 30px;
+
+            }
+            .search .fa-search {
+              position: absolute;
+              top: 28px;
+              left: 10%;
+              font-size: 15px;
+            }
+
 
             .myheader{
                 font-size: 34px;
-                font-family: Metropolis-SemiBold;
+                font-family:  'Abril Fatface', cursive;
                 letter-spacing: 6px;
                 text-transform: uppercase;
                 line-height: 120%;
@@ -184,9 +207,12 @@
             .pagination a:hover:not(.active) {background-color: #ddd;}
 
 
-
-
             .cvbnm{
+                background-color:#f2f2f2;
+                padding:35px;
+                border-radius:7px;}
+
+            .wrapa{
                 background-color:#f2f2f2;
                 padding:35px;
                 border-radius:7px;
@@ -330,9 +356,7 @@
                 font-weight: bold;
                 font-size: 21px;
                 text-align: center;
-                font-family: sans-serif;
-                text-shadow: 2px -1px 3px black;
-                color: #5bc0de;}
+                text-shadow: 2px -1px 3px black;}
 
 
 
@@ -435,17 +459,20 @@
       <div class="col-md-5 mb-5">
         <ul class="list-unstyled list-spaced">
           <li class="mb-2"><h6 class="text-uppercase" id="foot">About</h6></li>
-          <li class="text-muted">
-             We’ve been working on Campus Buy for the better part of 2 years and are super proud of what we’ve created. If you’d like to learn more, or are interested in a job, contact us anytime at <a href="mailto:www.campusbuyinfo@gmail.com">campusbuyinfo@gmail.com</a>.
+          <li style="letter-spacing: 1px;" class="text-muted">
+             CampusBuy is a platform made for students by students. It seeks to improve business among students with a very simplistic approach; connecting BUYER to SELLER. If you’d like to learn more, or are interested in being part of the team here, contact us anytime at <a href="mailto:www.campusbuyinfo@gmail.com">campusbuyinfo@gmail.com</a>.
           </li>
         </ul>
       </div>
       <div class="col-md-2 offset-md-1 mb-5">
         <ul class="list-unstyled list-spaced">
           <li class="mb-2"><h6 class="text-uppercase">Contact Us</h6></li>
-          <li class="text-muted">Hall3, Uniben</li>
-          <li class="text-muted">campusuyinfo@gmail.com</li>
-            <li class="text-muted"><a href="tel:08138931117">08138931117</a></li>
+            <br>
+            <li class="text-muted"><i class="fas fa-map-marker-alt"></i>    (Preferable at night) H3, H4 Or Any LT with Electricity, Uniben</li>
+          <br>
+            <li class="text-muted"><i class="fas fa-envelope"></i>  campusuyinfo@gmail.com</li>
+           <br>
+            <li class="text-muted"><i class="fas fa-mobile-alt"></i>  08138931117</li>
         </ul>
       </div>
 

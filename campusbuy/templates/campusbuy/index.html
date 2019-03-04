@@ -4,12 +4,19 @@
 
 
 
-<div class="stage-shelf stage-shelf-right hidden" id="sidebar">
+<div style="font-family:'Coda', cursive;" class="stage-shelf stage-shelf-right hidden" id="sidebar">
   <ul class="nav nav-bordered nav-stacked flex-column">
     <li class="nav-item">
+
      <form method="get" action="{%url 'search' %}">
-       <input type= "text" name="q" placeholder="Search here..">
+               <div class="search">
+                    <span <i class="fa fa-search"></span>
+                    <input type="text" name="q" placeholder="search">
+               </div>
+
       </form>
+
+
     </li>
      <li class="nav-item">
       <a class="nav-link active" href="{%url 'Homepage'%}">Home</a>
@@ -51,7 +58,7 @@
       <strong style="background: #2595ff; padding: 12px; border-radius: 4px; color: #fff; text-shadow: 0px -1px 1px black;">CAMPUS BUY</strong>
     </a>
 
-    <div class="hidden-sm-down text-uppercase">
+    <div style="font-family:'Coda', cursive; "class="hidden-sm-down text-uppercase ">
       <ul class="navbar-nav">
         <li class="nav-item px-1 ">
           <a class="nav-link" href="#">Home</a>
@@ -82,8 +89,8 @@
           <div>Buying and Selling <br>For Students <br>made easy</div>
 
 
-           <button class="btn btn-pill btn-success" type="button" name="button"> <a href="{%url 'PostAd' %}">Post your ad</a></button>
-           <button class="btn btn-pill btn-danger" type="button" name="button"><a href="#bns">Look up ads</a></button>
+           <button class="btn btn-pill btn-success" type="button" name="button"> <a style="font-size: 10px;" href="{%url 'PostAd' %}">Post your ad</a></button>
+           <button class="btn btn-pill btn-danger" type="button" name="button"><a style=" font-size: 10px;" href="#bns">Look up ads</a></button>
        </div>
 
     </div>
@@ -101,7 +108,7 @@
 
     <div class="row mb-5">
       <div class="col-xs-10 offset-xs-1 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
-        <h6 class="text-muted text-uppercase mb-2" id="bns">Campus Buy</h6>
+        <h6 class="text-muted text-uppercase mb-2" id="bns" style="font-family: 'Coda', cursive;">Campus Buy</h6>
         <h3  class="mb-4">CATEGORIES</h3>
       </div>
     </div>
@@ -114,7 +121,7 @@
 
                   <div class="col-md-4 px-4 mb-5">
                   <a href="{{ category.Name }}"><img style="height: 94px;" class="mb-1" src="{{MEDIA_URL}}{{category.Category_Logo.url}}"></a>
-                <p><strong>{{category.Name}}</strong>  {{category.Details}}</p>
+                      <p><strong>{{category.Name}}</strong> <span style="font-family: 'Rancho', cursive;"> {{category.Details}}</span></p>
               </div>
       {% endfor %}
 
