@@ -79,7 +79,7 @@
                 box-shadow: 3px 5px 8px 0px #204752;
                 font-weight: bold;}
 
-            @media (max-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
+            @media (max-width: 800px) and (-webkit-min-device-pixel-ratio: 2) {
 
                 input,textarea, select {
                 width: 100%;
@@ -97,7 +97,7 @@
 
 
 
-             @media screen and (max-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
+             @media screen and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 2) {
              input:focus, textarea:focus, select:focus {
 
                 border-color: #66afe9;
@@ -135,11 +135,19 @@
               text-indent: 30px;
 
             }
+
             .search .fa-search {
               position: absolute;
-              top: 28px;
-              left: 10%;
-              font-size: 15px;
+              top: 26px;
+              left: 27%;
+              font-size: 15px;}
+
+            @media screen and (max-width: 812px)and (-webkit-min-device-pixel-ratio: 2){
+            .search .fa-search {
+              position: absolute;
+              top: 26px;
+              left: 7%;
+              font-size: 15px;}
             }
 
 
@@ -156,7 +164,8 @@
                 top: 70px;
                 }
 
-            @media (max-width: 768px){
+
+            @media (max-width: 800px){
                 .myheader{
 
                 font-size: 22px;
@@ -278,8 +287,15 @@
 
                     }
 
+                 /* iphone X */
+                @media only screen and (min-width: 375px) and (max-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+                    #bg {
+                        background-size: 100% 100%;
+                        height: 48vh;
+                        margin: 3px auto 0;}
+                        }
 
-                   @media screen and (max-width: 500px)and (-webkit-min-device-pixel-ratio: 2){
+                   @media screen and (max-width: 812px)and (-webkit-min-device-pixel-ratio: 2){
                      #bg{
                         background-size: 100% 100%;
                         height: 67vh;
@@ -287,14 +303,14 @@
                         }
 
 
-                   @media screen and (max-width: 500px)and (-webkit-min-device-pixel-ratio: 2){
+                   @media screen and (max-width: 800px)and (-webkit-min-device-pixel-ratio: 2){
 
                         .col-sm-10, col-lg-6{
                             position: relative;
                             top: 115px;}
                         }
 
-            @media screen and (max-width: 500px)and (-webkit-min-device-pixel-ratio: 2){
+            @media screen and (max-width: 800px)and (-webkit-min-device-pixel-ratio: 2){
                 .AdNav a:not(:first-child),.AdNav input[type=text]{
                 display:none;
                 }
@@ -308,7 +324,7 @@
             }
 
 
-            @media screen and (max-width: 500px) and (-webkit-min-device-pixel-ratio: 2) {
+            @media screen and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 2) {
               .AdNav.responsive {position: fixed; height: 316px;}.
               .AdNav.responsive input[type=text]{position: fixed;}
               .AdNav.responsive a.icon {
