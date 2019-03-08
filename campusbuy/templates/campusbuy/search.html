@@ -46,7 +46,7 @@
       </form>
 
                 <br>
-                   <div style="font-family:'Coda', cursive; " id="adtext">Results</div>
+                   <div style="font-family:'Coda', cursive; " >Results</div>
 <hr>
 
                     <div class="cvbnm">
@@ -57,7 +57,7 @@
                         <div class="row">
                          {% for item in results %}
                             <div class="card" style="width:250px; margin: 9px;">
-                             {% cloudinary ads.image THUMBNAIL %}
+                             {% cloudinary item.image THUMBNAIL %}
                               <div class="card-body">
                                   <p class="card-text"><small class="text-muted">Posted: {{item.published_date}}</small></p>
                                 <h3 class="card-title" style="font-weight: bold;">{{ item.Item}}</h3>
