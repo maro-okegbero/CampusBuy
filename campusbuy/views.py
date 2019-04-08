@@ -9,7 +9,7 @@ from django.contrib.postgres.search import SearchVector
 
 
 
-# Create your views here.
+# The view the view baby!
 
 def Homepage(request):
     Categories = Category.objects.all()
