@@ -7,5 +7,5 @@ class Command(BaseCommand):
     help = 'Delete Ads that are more than 30 days old'
 
     def handle(self, *args, **options):
-        Advert.objects.filter(published_date__lte= timezone.now() + timedelta(days=30)).delete()
-        self.stdout.write(self.style.SUCCESS('Deleted Ads older than 30 days'))
+        Advert.objects.filter(published_date__lte= timezone.now() + timedelta(days=20)).delete()
+        self.stdout.write(self.style.SUCCESS('Deleted Ads older than 20 days'))
