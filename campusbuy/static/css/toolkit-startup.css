@@ -8447,9 +8447,10 @@ textarea {
   display: inline-block; }
 
 .block-fill-height {
-  display: table;
+  background-image: url(../../static/images/CBbackground.jpg);
+  display: run-in;
   width: 100%;
-  height: 110vh; }
+  height: 110vh;}
 
 .block-label {
   margin-bottom: 20px;

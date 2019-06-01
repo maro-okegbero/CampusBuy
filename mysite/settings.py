@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'campusbuy',
     'cloudinary',
+    'phonenumber_field',
 
 
     ]

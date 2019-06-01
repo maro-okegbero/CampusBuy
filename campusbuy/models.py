@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from cloudinary.models import CloudinaryField
+from phonenumber_field.modelfields import PhoneNumberField
 import PIL.Image as Image
 
 
@@ -18,18 +19,20 @@ class Category(models.Model):
         return self.Name
 
 class Advert(models.Model):
-    HALL4 = 'H4'
-    HALL3 = 'H3'
-    HALL2 = 'H2'
-    HALL1 = 'H1'
-    MAIN_GATE = 'MG'
-    GREEN_PARK = 'GP'
-    GTBANK = 'GTBWS'
-    NAAS_GARDEN = 'NAASG'
-    PHYSICAL_SCIENCE_COMPLEX = 'PSC'
-    MEDICAL_SCIENCE_COMPLEX = 'MSC'
-    ORCHARD = 'ORC'
-    JUNE12 = 'J12'
+    HALL4 = 'HALL4'
+    HALL3 = 'HALL3'
+    HALL2 = 'HALL2'
+    HALL1 = 'HALL1'
+    MAIN_GATE = 'MAIN_GATE'
+    GREEN_PARK = 'GREEN_PARK'
+    GTBANK = 'GTBANK'
+    NAAS_GARDEN = 'NAAS_GARDEN'
+    PHYSICAL_SCIENCE_COMPLEX = 'PHYSICAL_SCIENCE_COM'
+    MEDICAL_SCIENCE_COMPLEX = 'MED_COM'
+    BASEMENT = 'BASEMENT'
+    JUNE12 = 'JUNE12'
+    ENGINEERING = 'ENGINEERING_PARK'
+
 
 
 
@@ -45,17 +48,20 @@ class Advert(models.Model):
         (NAAS_GARDEN, 'Naas Garden'),
         (PHYSICAL_SCIENCE_COMPLEX, 'Physical Science Complex'),
         (MEDICAL_SCIENCE_COMPLEX, 'Medical Science Complex'),
-        (ORCHARD,'Orchard'),
-        (JUNE12, 'June12')
+        (BASEMENT,'Basement'),
+        (JUNE12, 'June12'),
+        (ENGINEERING, 'Engineering Park')
+
 
 
     )
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     Seller_Name = models.CharField(max_length=50, blank=False, null=False)
-    Phone_Number = models.IntegerField(blank=False, null=False,
-                                    help_text='<p style="color: red; font: italic 12px tahoma;">**Please input a working Phone Number that you can be contacted with on the fly</p>')
-    image = CloudinaryField('image')#  Cloudinary image Field
+    Phone_Number = models.CharField(max_length= 12, blank=False, null=False)
+    # Special Cloudinary image Field
+    image = CloudinaryField('image')
+
     Item = models.CharField(max_length=20, blank=False, null=False)
     Location = models.CharField(max_length=10, choices=Location_Choices, default=HALL3, blank=False,  help_text='<p style="color: red; font: italic 12px tahoma;">**Choose a location where you can easily meet up with potential buyers</p>')
     Description = models.TextField(max_length=250, blank=False, null=False)

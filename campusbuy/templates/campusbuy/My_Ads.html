@@ -56,6 +56,7 @@
                         <div class="row">
                         {% for ads in categories %}
                             {% load humanize %}
+                            {% load nigerian %}
                             <div class="card" style="width:250px; margin: 9px;">
                               {% cloudinary ads.image THUMBNAIL %}
                               <div class="card-body">
@@ -71,7 +72,7 @@
                                           <p style="font-weight: bold; font-size:;">Location:<span style="color: red;"> {{ads.Location}}</span> </p>
                                           <a href="tel: {{ads.Phone_Number}}"style="font-weight: bold; text-decoration:none;">Call me<i class="fas fa-phone"></i></a>
                                           <span>&#124;</span>
-                                          <a href="https://wa.me/{{ads.Phone_Number}}/?text=I'm%20interested%20in%20the%20item%20you're%20selling"><i class="fab fa-whatsapp"></i> Text me</a>
+                                          <a href="https://wa.me/{{ads.Phone_Number|nigerianalize}}/?text=I'm%20interested%20in%20the%20item%20you're%20selling"><i class="fab fa-whatsapp"></i> Text me</a>
 
 
                                        </div>
