@@ -3,461 +3,36 @@
 <html lang="en">
 <head>
         <meta charset="utf-8">
-
         <meta http-equiv="x-ua-compatible" content="IE=edge">
-
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <meta name="description" content="An online paltform that allows Students advertise items they want to sell">
-
         <meta name="keywords" content="Campus, Adverts, Students, Free, Sell, Buy">
-
         <meta name="author" content="OrangeSquash-Solutions">
 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <title>campusbuy.online</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-                <!--CSS-->
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
-        <link rel="stylesheet" href="{% static 'css/toolkit-startup.css' %}" type="text/css">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="{% static 'css/application-startup.css' %}" type="text/css">
-
-
-        <link href="{% static 'font-awesome/css/font-awesome.css' %}" rel="stylesheet" type="text/css">
-
-
-         <title>cb.com.ng</title>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link rel="icon" type="image/gif" href="{% static 'images/icon.gif' %}" sizes="16x16">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Coda">
-        <link href="https://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
-
-
-    <!--JS-->
-     <script src="{%static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/tether.min.js' %} "></script>
-    <script src="{% static 'js/toolkit.js' %}"></script>
-    <script src="{% static 'js/application.js' %}"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 
-
-
-
-
-
-    <style>
-
-
-            /* Code for loading icon .This only works with JavaScript,
-            if it's not present, don't show loader */
-
-            .no-js #loader { display: none;  }
-
-            .js #loader { display: block; position: absolute; left: 100px; top: 0; }
-
-            .se-pre-con {
-                position: fixed;
-                left: 0px;
-                top: 0px;
-                width: 100%;
-                height: 100%;
-                z-index: 9999;
-                background: url(../../static/images/Preloader_2.gif) center no-repeat #fff;
-            }
-
-
-             input,textarea, select {
-                width: 50%;
-                padding: 12px 20px;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #2595ff;
-                border-radius: 19px;
-                box-sizing: border-box;
-                box-shadow: 3px 5px 8px 0px #204752;
-                font-weight: bold;}
-
-            @media (max-width: 800px) and (-webkit-min-device-pixel-ratio: 2) {
-
-                input,textarea, select {
-                width: 100%;
-                padding: 12px 20px;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #2595ff;
-                border-radius: 19px;
-                box-sizing: border-box;
-                box-shadow: 3px 5px 8px 0px #204752;
-                font-weight: bold;}
-            }
-
-
-
-
-
-             @media screen and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 2) {
-             input:focus, textarea:focus, select:focus {
-
-                border-color: #66afe9;
-                outline: 0;
-                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
-                box-shadow: inset 0 1px 8px rgba(0,0,0,.075), 0 0 24px #2681af; }
-             }
-
-            input[type=submit] {
-                width: 100%;
-                background-color: #2595ff;
-                color: white;
-                padding: 14px 20px;
-                margin: 8px 0;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-
-            input[type=submit]:hover {
-                background-color: #45a049f;
-            }
-
-            label{
-
-            font-weight: bold;
-            }
-
-            .search {
-              position: relative;
-              margin: 0 auto ;
-              text-align: center;
-            }
-            .search input {
-              text-indent: 30px;
-
-            }
-
-            .search .fa-search {
-              position: absolute;
-              top: 26px;
-              left: 27%;
-              font-size: 15px;}
-
-            @media screen and (max-width: 812px)and (-webkit-min-device-pixel-ratio: 2){
-            .search .fa-search {
-              position: absolute;
-              top: 26px;
-              left: 7%;
-              font-size: 15px;}
-            }
-
-
-            .myheader{
-                font-size: 34px;
-                font-family:  'Abril Fatface', cursive;
-                letter-spacing: 6px;
-                text-transform: uppercase;
-                line-height: 120%;
-                text-align: center;
-                color: white;
-                text-shadow: -3px -3px 8px #000000;
-                position: relative;
-                top: 70px;
-                }
-
-
-            @media (max-width: 800px){
-                .myheader{
-
-                font-size: 22px;
-                }
-            }
-
-          button>a{
-            color:white;
-            text-decoration: none;
-          }
-
-          .btn-success>a:focus{
-            color: white;
-            text-decoration: none;
-          }
-
-
-           .btn-danger>a:focus{
-            color: white;
-            text-decoration: none;
-          }
-
-
-           button>a:hover{
-            color: white;
-            text-decoration: none;
-          }
-
-
-            .pagination {
-
-                display: inline-block;
-            }
-
-            .pagination a {
-                
-                color: black;
-                float: left;
-                padding: 8px 16px;
-                text-decoration: none;
-            }
-
-            .pagination a.active {
-                background-color: #ff3167ab;
-                color: #d9534f;
-            }
-
-            .pagination a:hover:not(.active) {background-color: #ddd;}
-
-
-            .cvbnm{
-                background-color:#f2f2f2;
-                padding:35px;
-                border-radius:7px;}
-
-            .wrapa{
-                background-color:#f2f2f2;
-                padding:35px;
-                border-radius:7px;
-                border-top: 1px solid #fd4532;
-                border-left: 1px solid #b61ddc;
-                border-right: 1px solid #d3de2c;
-                border-bottom: 1px solid #fd4532;
-
-
-            }
-
-/*! Code for the Navbar in New_Ad and Ads */
-
-            .AdNav{
-
-                background-color: #2595ff;
-                overflow : hidden;
-                transition: .5s;
-                position: fixed;
-                top: 0;
-                right: 0;
-                left: 0;
-                z-index: 1;
-                height: 47px;
-            }
-
-            .AdNav a{
-                float: left;
-                display: block;
-                color: #f2f2f2;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-                text-shadow: 0px -1px 4px black;
-            }
-
-            .AdNav a:hover{
-                background-color: #2595ff;
-                color: black;
-            }
-
-            .AdNav .icon{
-                display: none;
-
-            }
-
-            .AdNav input[type=text] {
-                float: right;
-                width: 30%;
-                padding: 6px;
-                border: none;
-                margin-top: 8px;
-                margin-bottom: 4px;
-                margin-right: 16px;
-                font-size: 17px;
-
-
-            }
-
-
-
-                  #bg{
-                    background-image: url(../../static/images/CBbackground.jpg);
-
-                    }
-
-                 /* iphone X */
-                @media only screen and (min-width: 375px) and (max-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-                    #bg {
-                        background-size: 100% 100%;
-                        height: 48vh;
-                        margin: 3px auto 0;}
-                        }
-
-                   @media screen and (max-width: 1480px)and (-webkit-min-device-pixel-ratio: 2){
-                     #bg{
-                        background-size: 100% 100%;
-                        height: 109vw;;
-                        margin: 3px auto 0;}
-                        }
-
-
-                   @media screen and (max-width: 800px)and (-webkit-min-device-pixel-ratio: 2){
-
-                        .col-sm-10, col-lg-6{
-                            position: relative;
-                            top: 115px;}
-                        }
-
-            @media screen and (max-width: 800px)and (-webkit-min-device-pixel-ratio: 2){
-                .AdNav a:not(:first-child),.AdNav input[type=text]{
-                display:none;
-                }
-
-                .AdNav a.icon{
-                    float: right;
-                    display: block;
-                    background-color: ash;
-
-                }
-            }
-
-
-            @media screen and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 2) {
-              .AdNav.responsive {position: fixed; height: 316px;}.
-              .AdNav.responsive input[type=text]{position: fixed;}
-              .AdNav.responsive a.icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-                transition: .5s;}
-              }
-
-              .AdNav.responsive a{
-                float: none;
-                display: block;
-                text-align: left;
-                text-shadow: 0px -1px 4px #2f4254;
-
-              }
-
-
-              .AdNav.responsive input[type=text]{
-                 float: none;
-                 display: block;
-                 text-align: left;
-                 padding: 14px;
-                 width: 30%;
-                 margin: 12px;
-                 border-radius: 0px;
-                 height: 12px;}
-
-
-
-              /*! End of Code for the Navbar in New_Ad and Ads */
-
-
-            .card{
-
-                border-top: 1px solid #fd4532;
-                border-left: 1px solid #b61ddc;
-                border-right: 1px solid #d3de2c;
-                border-bottom: 1px solid #fd4532;
-
-            }
-
-            #adtext{
-
-                font-weight: bold;
-                font-size: 21px;
-                text-align: center;
-                text-shadow: 2px -1px 3px black;}
-
-
-
-/*! Code for the animated toggle button at the Navbar in New_Ad and Ads */
-
-
-
-             .container {
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .bar1, .bar2, .bar3 {
-            width: 21px;
-            height: 2px;
-            background-color: #e6e6e6;
-            margin: 6px 0;
-            transition: 0.4s;
-            box-shadow: 1px -1px 3px black;
-        }
-
-        /* Rotate first bar */
-        .change .bar1 {
-            -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-            transform: rotate(-45deg) translate(-9px, 6px) ;
-        }
-
-        /* Fade out the second bar */
-        .change .bar2 {
-            opacity: 0;
-        }
-
-        /* Rotate last bar */
-        .change .bar3 {
-            -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-            transform: rotate(45deg) translate(-8px, -8px) ;
-        }
-
-        /*! End of Code for the animated toggle button for the Navbar in New_Ad and Ads */
-
-
-
-.btn-success:hover {
-    background-color:#007cf1; !important
-    border-color: #007cf1;
-}
-
-    </style>
-
-
-
-    <script>
-
-        function myFunction() {
-    var x = document.getElementById("MyAdNav");
-    if (x.className === "AdNav") {
-        x.className += " responsive";
-    } else {
-        x.className = "AdNav";
-    }
-}
-
-        function myFunctionx(x) {
-    x.classList.toggle("change");
-}
-
-//code for loading icon
-// Wait for window load
-	$(window).load(function() {
-		// Animate loader off screen
-		$(".se-pre-con").fadeOut("slow");;
-	});
-
-    </script>
-
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 
 </head>
 
 
 <body>
-    <div class="se-pre-con"></div>
+
 
 
 
@@ -470,47 +45,30 @@
 
 
         
-    <footer id="footer"><!--        Footer-->
-           <div class="block block-inverse footer">
- <div class="container">
-    <div class="row">
-      <div class="col-md-5 mb-5">
-        <ul class="list-unstyled list-spaced">
-          <li class="mb-2"><h6 class="text-uppercase" id="foot">About</h6></li>
-          <li style="letter-spacing: 1px;" class="text-muted">
-             CampusBuy is a platform made for students by students. It seeks to improve business among students with a very simplistic approach; connecting BUYER to SELLER. If you’d like to learn more, or are interested in being part of the team here, contact us anytime at <a href="mailto:www.campusbuyinfo@gmail.com">campusbuyinfo@gmail.com</a>.
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-2 offset-md-1 mb-5">
-        <ul class="list-unstyled list-spaced">
-          <li class="mb-2"><h6 class="text-uppercase">Contact Us</h6></li>
-            <br>
-            <li class="text-muted"><i class="fas fa-map-marker-alt"></i>    (Preferable at night) H3, H4 Or Any LT with Electricity, Uniben</li>
-          <br>
-            <li class="text-muted"><i class="fas fa-envelope"></i>  campusuyinfo@gmail.com</li>
-           <br>
-            <li class="text-muted"><i class="fas fa-mobile-alt"></i>  08138931117</li>
-        </ul>
-      </div>
-
-      <div class="col-md-2 mb-5">
-        <ul class="list-unstyled list-spaced">
-          <li class="mb-2"><h6 class="text-uppercase">Legal</h6></li>
-          <li class="text-muted">Terms</li>
-          <li class="text-muted">Legal</li>
-          <li class="text-muted">Privacy</li>
-          <li class="text-muted">License</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+   <footer class="footer">
+        <div class="footerSection">
+            <div class="about">
+                <h3>About</h3>
+                <p>Campus buy is a platform made for students by students. It seeks to improve business amongst students with a very simplistic approach; Connecting BUYERS to SELLERS.</p>
+            </div>
+            <div class="contact">
+                <h3>Contact</h3>
+                <p><img class="nav-icons" src="static/assets/location.svg"> Hall 3, Hall 4 or any LT with Electricity, UniBen</p>
+                <p><img class="nav-icons" src="static/assets/contact.svg"> 08138931117</p>
+                <p><img class="nav-icons" src="static/assets/contact.svg"> <a href="mailto:campusbuyinfo@gmail.com">campusbuyinfo@gmail.com</a></p>
+            </div>
+            <div class="legal">
+                <h3>Legal</h3>
+                <li><a href="javascript:void(0)">Terms</a></li>
+                <li><a href="javascript:void(0)">Legal</a></li>
+                <li><a href="javascript:void(0)">Privacy</a></li>
+                <li><a href="javascript:void(0)">License</a></li>
+            </div>
+        </div>
     </footer>
 
-
+<script src="{% static 'js/main.js' %} "></script>
+<script src="{% static 'js/jquery.min.js' %} "></script>
 
 
 

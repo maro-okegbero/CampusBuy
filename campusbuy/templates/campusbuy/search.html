@@ -3,26 +3,21 @@
     {% load cloudinary %}
 
         <!--BEGINNING OF NAV-->
-
-        <div style="font-family:'Coda', cursive; " class="AdNav" id="MyAdNav">
-
-            <a href="{%url 'Homepage' %}" > <span style="font-weight: bold; text-shadow: 3px 1px 5px #2f4254; font-size: 22px;">CAMPUS BUY</span></a>
-            <a href="{%url 'Homepage' %}" > Home</a>
-            <a href="{%url 'Homepage' %}#bns"> Look Up Ads</a>
-            <a href="{%url 'PostAd' %}" > Post Ads</a>
-            <a href="#footer" > About</a>
-
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <div class="container" onclick="myFunctionx(this)">
-                      <div class="bar1"></div>
-                      <div class="bar2"></div>
-                      <div class="bar3"></div>
-                </div>
-            </a>
-
-
+<div class="container">
+        <div class="header">
+            <h1 class="logo">CampusBuy</h1>
+            <nav id="navLinks" class="navLinks">
+                <a href="javascript:void(0)" class="hide-desktop" id="menu" class="menu">&#9776;</a>
+                <ul class="show-desktop hide-mobile" id="nav">
+                    <li id="exit" class="exit-btn hide-desktop">&times;</li>
+                    <li><a href="{%url 'Homepage' %}">Home</></li>
+                    <li><a class="active" href="{%url 'PostAd' %}">Post Ad</a></li>
+                    <li><a href="{%url 'Homepage'%}#categorySection">Look Up Ad</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li class="search"><a href="{%url 'search' %}"><img src="assets/search.svg" alt=""></a></li>
+                </ul>
+            </nav>
         </div>
-
         <!--END OF NAV-->
 
 
@@ -31,82 +26,51 @@
 
 
         <!-- BEGINNING OF THE BODY-->
-
-    <div class="block block-secondary">
-
-        <div class="container text-xs-center">
-
+<br>
 
             <form method="get" >
-               <div class="search">
-                    <span <i class="fa fa-search"></span>
-                    <input type="text" name="q" placeholder="search">
-               </div>
-
-      </form>
+                    <input type="text" name="q" placeholder="search"  class="fa fa-search">
+            </form>
 
                 <br>
-                   <div style="font-family:'Coda', cursive; " >Results</div>
+                   <h3 >Results</h3>
 <hr>
+<div  class="maincategorySection">
+        <h2 style="padding-top: 0px; padding-bottom: 0px;">{{category}}</h2>
+        <p>Here's the list of ads that match your search</p>
+    {% for item in results %}
+                            {% load humanize %}
+                            {% load nigerian %}
+        <div class="categories">
+            <div class="categoriesBox {{category}}">
 
-                    <div class="cvbnm">
+               {% cloudinary item.image THUMBNAIL %}
 
+                <p style="font-size: xx-small; padding-bottom:0in;">Posted: {{ item.published_date|naturaltime }}</p>
+                <h5>{{ item.Item}}</h5>
+                <p style="color:lawngreen; padding-bottom:0in;" >&#8358 {{item.Asking_Price|intcomma}}</p>
 
-                    <!--- Ads -->
+              <div id="ad{{item.pk}}" class="collapse">
+          <p style="font-weight: bold; font-size:10px; border: 2px ridge #9a9a9a;">{{item.Description}}</p>
+          <p style="font-weight: normal; padding-bottom: 0px;"><i style='font-size:24px; color: red;' class='fas'>&#xf3c5;</i> {{item.Location}}</span> </p>
+          <a href="tel: {{item.Phone_Number}}" style="text-decoration:none; color: hsla(0, 0%, 0%, 0.9); padding: 0px; border: none;">Call me<i class="fas fa-phone fa-flip-horizontal"></i></a>
+          <span>&#124;</span>
+          <a href="https://wa.me/{{item.Phone_Number|nigerianalize}}/?text=I'm%20interested%20in%20the%20item%20you're%20selling" style="text-decoration:none; color: hsla(0, 0%, 0%, 0.9); padding: 0px; border: none;">Whatsapp <i class="fab fa-whatsapp" style="color:green;"></i> </a>
+              </div>
+                <a class="post" id="clickk" href="#ad{{item.pk}}"  data-toggle="collapse")">View Details</a>
 
-                        <div class="row">
-                         {% for item in results %}
-                            <div class="card" style="width:250px; margin: 9px;">
-                             {% cloudinary item.image THUMBNAIL %}
-                              <div class="card-body">
-                                  <p class="card-text"><small class="text-muted">Posted: {{item.published_date}}</small></p>
-                                <h3 class="card-title" style="font-weight: bold;">{{ item.Item}}</h3>
-                                  <h4  class="card-title">Vendor: {{item.Seller_Name}}</h4>
+            </div>
 
-                                      <div id="ad{{item.id}}" class="collapse">
-
-                                          <p style="font-weight: bold; font-size:10px; border: 2px ridge #9a9a9a;">{{item.Description}}</p>
-                                          <p style="font-weight:bold; font-size:; ">Asking-Price:<span style="color: green;"> &#8358 {{item.Asking_Price}}</span> </p>
-                                          <p style="font-weight: bold; font-size:;">Location:<span style="color: red;"> {{item.Location}}</span> </p>
-                                          <a href="tel: {{item.Phone_Number}}"style="font-weight: bold; text-decoration:none;">Call me<i class="fas fa-phone"></i></a>
-                                          <span>&#124;</span>
-                                          <a href="https://wa.me/{{itemd.Phone_Number}}/?text=I'm%20interested%20in%20the%20item%20you're%20selling"><i class="fab fa-whatsapp"></i> Text me</a>
-
-
-                                       </div>
-                                        <br>
-                                <a href="#ad{{item.id}}" class="btn btn-primary" style="focus, hover {color: #fff;}" data-toggle="collapse">See more</a>
-
-                              </div>
-
-                            </div>
-
-                                {% empty %}
-                                        <h4> NO AD MATCHED YOUR SEARCH</h4>
-
-
-                            {% endfor %}
-
-                     </div>
-
-
-
-                    </div>
         </div>
 
+         {% empty %}
+
+         <p style="text-align: center; "> NO AD MATCHED YOUR SEARCH</p>
+
+            {% endfor %}
+    </div>
 
 </div>
-
-<br>
-<br>
-<br>
-
-<!--END OF THE BODY-->
-
-
-
-
-
 
 
 

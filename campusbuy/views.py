@@ -59,6 +59,6 @@ def search(request):
     if query:
         results = Advert.objects.annotate(search=SearchVector('Item', 'Description', 'Seller_Name'),).filter(search = query)
     else:
-        results = Advert.objects.all()
+        results = Advert.objects.filter(Seller_Name__startswith="/")
 
     return render(request, 'campusbuy/search.html', {'results': results})

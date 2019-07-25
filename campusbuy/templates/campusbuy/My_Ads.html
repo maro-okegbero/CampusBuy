@@ -3,93 +3,60 @@
 {% load cloudinary %}
 
 
-<div style="font-family:'Coda', cursive; " class="AdNav" id="MyAdNav">
-
-    <a href="{%url 'Homepage' %}" > <span style="font-weight: bold; text-shadow: 3px 1px 5px #2f4254; font-size: 22px;">CAMPUS BUY</span></a>
-    <a href="{%url 'Homepage' %}" > Home</a>
-    <a href="{%url 'Homepage'%}#bns"> Look Up Ads</a>
-    <a href="{%url 'PostAd' %}" > Post Ads</a>
-    <a href="#footer" > About</a>
-    <form method="get" action="{%url 'search' %}">
-
-                    <input type="text" name="q" placeholder="search">
-
-
-      </form>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <div class="container" onclick="myFunctionx(this)">
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
+<div class="container">
+        <div class="header">
+            <h1 class="logo">CampusBuy</h1>
+            <nav id="navLinks" class="navLinks">
+                <a href="javascript:void(0)" class="hide-desktop" id="menu" class="menu">&#9776;</a>
+                <ul class="show-desktop hide-mobile" id="nav">
+                    <li id="exit" class="exit-btn hide-desktop">&times;</li>
+                    <li><a href="{%url 'Homepage' %}">Home</></li>
+                    <li><a class="active" href="{%url 'PostAd' %}">Post Ad</a></li>
+                    <li><a href="{%url 'Homepage'%}#categorySection">Look Up Ad</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li class="search"><a href="{%url 'search' %}"><img src="static/assets/search.svg" alt=""></a></li>
+                </ul>
+            </nav>
         </div>
-    </a>
-
-
-</div>
 
 
 
 
-<!-- BEGINNING OF THE BODY-->
-
-    <div class="block block-secondary">
-
-        <div class="container text-xs-center">
 
 
-
-                   <div  style="font-family:'Coda', cursive; font-size: 20px; id="adtext">{{category}}</div>
-<hr>
-
-            <div class="row ">
-
-
-                    <!--- Ads -->
-
-
-
-                    <div class="cvbnm">
-
-
-                    <!--- Ads -->
-
-                        <div class="row">
-                        {% for ads in categories %}
+<div class="maincategorySection">
+        <h2>{{category}}</h2>
+        <p>Here's a list of the available items under the {{category}} category</p>
+    {% for ads in categories %}
                             {% load humanize %}
                             {% load nigerian %}
-                            <div class="card" style="width:250px; margin: 9px;">
-                              {% cloudinary ads.image THUMBNAIL %}
-                              <div class="card-body">
-                                  <p class="card-text"><small class="text-muted">Posted: {{ ads.published_date|naturaltime }}</small></p>
-                                <h3 class="card-title" style="font-weight: bold;">{{ ads.Item}}</h3>
-                                  <h4  class="card-title">Vendor: {{ads.Seller_Name}}</h4>
+        <div class="categories">
+            <div class="categoriesBox {{category}}">
+
+               {% cloudinary ads.image THUMBNAIL %}
+
+                <p style="font-size: xx-small; padding-bottom:0in;">Posted: {{ ads.published_date|naturaltime }}</p>
+                <h5>{{ ads.Item}}</h5>
+                <p style="color:lawngreen; padding-bottom:0in;" >&#8358 {{ads.Asking_Price|intcomma}}</p>
+
+              <div id="ad{{ads.pk}}" class="collapse">
+          <p style="font-weight: bold; font-size:10px; border: 2px ridge #9a9a9a;">{{ads.Description}}</p>
+          <p style="font-weight: normal; padding-bottom: 0px;"><i style='font-size:24px; color: red;' class='fas'>&#xf3c5;</i> {{ads.Location}}</span> </p>
+          <a href="tel: {{ads.Phone_Number}}" style="text-decoration:none; color: hsla(0, 0%, 0%, 0.9); padding: 0px; border: none;">Call me<i class="fas fa-phone fa-flip-horizontal"></i></a>
+          <span>&#124;</span>
+          <a href="https://wa.me/{{ads.Phone_Number|nigerianalize}}/?text=I'm%20interested%20in%20the%20item%20you're%20selling" style="text-decoration:none; color: hsla(0, 0%, 0%, 0.9); padding: 0px; border: none;">Whatsapp <i class="fab fa-whatsapp" style="color:green;"></i> </a>
+              </div>
+                <a class="post" id="clickk" href="#ad{{ads.pk}}"  data-toggle="collapse")">View Details</a>
+
+            </div>
+
+        </div>
+            {% endfor %}
+    </div>
 
 
-                                      <div id="ad{{ads.pk}}" class="collapse">
-
-                                          <p style="font-weight: bold; font-size:10px; border: 2px ridge #9a9a9a;">{{ads.Description}}</p>
-                                          <p style="font-weight:bold; font-size:; ">Asking-Price:<span style="color: green;"> &#8358 {{ads.Asking_Price|intcomma}}</span> </p>
-                                          <p style="font-weight: bold; font-size:;">Location:<span style="color: red;"> {{ads.Location}}</span> </p>
-                                          <a href="tel: {{ads.Phone_Number}}"style="font-weight: bold; text-decoration:none;">Call me<i class="fas fa-phone"></i></a>
-                                          <span>&#124;</span>
-                                          <a href="https://wa.me/{{ads.Phone_Number|nigerianalize}}/?text=I'm%20interested%20in%20the%20item%20you're%20selling"><i class="fab fa-whatsapp"></i> Text me</a>
 
 
-                                       </div>
-                                        <br>
-                                <a href="#ad{{ads.pk}}" class="btn btn-primary" data-toggle="collapse" style="focus{color:white;}">See more</a>
-
-                              </div>
-
-                            </div>
-
-
-                            {% endfor %}
-
-                     </div>
-
-                        <br>
-                        <br>
 
 
                                 {% if categories.has_other_pages %}

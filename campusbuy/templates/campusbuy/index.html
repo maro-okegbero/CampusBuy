@@ -1,172 +1,51 @@
 {%extends 'campusbuy/base.html' %}
                {% block content%}
 
-
-
-
-<div style="font-family:'Coda', cursive;" class="stage-shelf stage-shelf-right hidden" id="sidebar">
-  <ul class="nav nav-bordered nav-stacked flex-column">
-    <li class="nav-item">
-
-     <form method="get" action="{%url 'search' %}">
-               <div class="search">
-                    <span <i class="fa fa-search"></span>
-                    <input type="text" name="q" placeholder="search">
-               </div>
-
-      </form>
-
-
-    </li>
-     <li class="nav-item">
-      <a class="nav-link active" href="{%url 'Homepage'%}">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="{%url 'PostAd' %}">POST AD</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#footer">ABOUT US</a>
-    </li>
-    <li class="nav-divider"></li>
-    <li class="nav-header">Categories</li>
-
-    {% for category in Categories %}
-    <li class="nav-item">
-      <a class="nav-link" href="{{ category.Name }}">{{category.Name}}</a>
-    </li>
-    {% endfor %}
-
-  </ul>
-</div>
-
-  <div class="stage" id="stage">
-
-<div class="block block-inverse block-fill-height app-header" id="bg">
-
-  <div class="container py-4 fixed-top app-navbar">
-  <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm">
-    <button class="navbar-toggler navbar-toggler-right hidden-md-up" type="button" data-target="#stage" data-toggle="stage" data-distance="-250">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <a class="navbar-brand mr-auto" href="/">
-      <strong style="background: #2595ff; padding: 12px; border-radius: 4px; color: #fff; text-shadow: 0px -1px 1px black;">CAMPUS BUY</strong>
-    </a>
-
-    <div style="font-family:'Coda', cursive; " class="hidden-sm-down text-uppercase ">
-      <ul class="navbar-nav">
-        <li class="nav-item px-1 ">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item px-1 ">
-          <a class="nav-link" href="#foot">Contact Us</a>
-        </li>
-        <li class="nav-item px-1 ">
-          <a class="nav-link" href="/Post_Ad">Post AD!</a>
-        </li>
-        <li class="nav-item px-1 ">
-          <a class="nav-link" href="#bns">Look Up AD!</a>
-        </li>
-        <li class="nav-item px-1">
-          <a class="nav-link" href="/search">Search</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>
-
-  <div class="block-xs-middle pb-5">
-    <div class="container">
-
-
-      <div class="myheader">
-
-          <div>Buying and Selling <br>For Students <br>made easy</div>
-
-
-           <button class="btn btn-pill btn-success" type="button" name="button"> <a style="font-size: 10px;" href="/Post_Ad">Post your ad</a></button>
-           <button class="btn btn-pill btn-danger" type="button" name="button"><a style=" font-size: 10px;" href="#bns">Look up ads</a></button>
-       </div>
-
-    </div>
-  </div>
-</div>
-  <div class="container py-4 fixed-top app-navbar">
-  <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm">
-    <button
-      class="navbar-toggler navbar-toggler-right hidden-md-up"
-      type="button"
-      data-target="#stage"
-      data-toggle="stage"
-      data-distance="-250">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <a class="navbar-brand mr-auto" href="{%url 'Homepage' %}">
-      <strong style="background: #2595ff; padding: 12px; border-radius: 4px; color: #fff; text-shadow: 0px -1px 1px black;">CAMPUS BUY</strong>
-    </a>
-
-    <div style="font-family:'Coda', cursive; "class="hidden-sm-down text-uppercase ">
-      <ul class="navbar-nav">
-        <li class="nav-item px-1 ">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item px-1 ">
-          <a class="nav-link" href="#foot">Contact Us</a>
-        </li>
-        <li class="nav-item px-1 ">
-          <a class="nav-link" href="{%url 'PostAd' %}">Post AD!</a>
-        </li>
-        <li class="nav-item px-1 ">
-          <a class="nav-link" href="#bns">Look Up AD!</a>
-        </li>
-        <li class="nav-item px-1">
-          <a class="nav-link" href="{%url 'search' %}">Search</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>
-
-
-
-
-</div>
-
-
-         	<div class="block block-secondary ">
-
-
-
-
-  <div class="container text-xs-center" >
-
-
-    <div class="row mb-5">
-      <div class="col-xs-10 offset-xs-1 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
-        <h6 class="text-muted text-uppercase mb-2" id="bns" style="font-family: 'Coda', cursive;">Campus Buy</h6>
-        <h3  class="mb-4">CATEGORIES</h3>
-      </div>
-    </div>
-
-
-    <div class="row ">
-
-{% for category in Categories %}
-
-
-                  <div class="col-md-4 px-4 mb-5">
-                  <a href="{{ category.Name }}"><img style="height: 94px;" class="mb-1" src="{{MEDIA_URL}}{{category.Category_Logo.url}}"></a>
-                      <p><strong>{{category.Name}}</strong> <span style="font-family: 'Rancho', cursive;"> {{category.Details}}</span></p>
-              </div>
-      {% endfor %}
-
-
-           </div>
+<div class="container">
+        <div class="header">
+            <h1 class="logo">CampusBuy</h1>
+            <nav id="navLinks" class="navLinks">
+                <a href="javascript:void(0)" class="hide-desktop" id="menu" class="menu">&#9776;</a>
+                <ul class="show-desktop hide-mobile" id="nav">
+                    <li id="exit" class="exit-btn hide-desktop">&times;</li>
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a href="{%url 'PostAd' %}">Post Ad</a></li>
+                    <li><a href="#categorySection">Look Up Ad</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li class="search"><a href="{%url 'search' %}"><img src="static/assets/search.svg" alt=""></a></li>
+                </ul>
+            </nav>
         </div>
+        <div class="containerBody">
+            <div class="left">
+                <h1>uniben + Shopping = campusbuy</h1>
+                <p>Buying and selling for students made easy</p>
+                <a class="post" href="{%url 'PostAd' %}">Post Ads</a>
             </div>
-      </span>
-              </div>
+            <div class="right">
+                <img src="static/assets/heroimage.svg">
+            </div>
+        </div>
+        <a href="#categorySection"><img class="arrowDown hide-mobile" src="static/assets/chevron_down.svg" alt=""></a>
+    </div>
+
+   <div id="categorySection" class="categorySection">
+        <h2>Categories</h2>
+
+        <div class="categories">
+    {% for category in Categories %}
+            <div class="categoriesBox {{ category.Name }}">
+                <img alt="Ad Image" src="{{MEDIA_URL}}{{category.Category_Logo.url}}">
+                <h4>{{ category.Name }}</h4>
+                <p>{{ category.Details }}</p>
+                <a class="post" href="{{ category.Name }}">View Ad</a>
+            </div>
+     {% endfor %}
+        </div>
+   </div>
+
+
+
 
 
 {% endblock %}

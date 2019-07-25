@@ -5,61 +5,44 @@
     {% block content %}
 
 
-<div style="font-family:'Coda', cursive; " class="AdNav" id="MyAdNav">
-
-    <a href="{%url 'Homepage' %}" > <span style="font-weight: bold; text-shadow: 3px 1px 5px #2f4254; font-size: 22px;">CAMPUS BUY</span></a>
-    <a href="{%url 'Homepage' %}" > Home</a>
-    <a href="{%url 'Homepage'%}#bns"> Look Up Ads</a>
-    <a href="{%url 'PostAd' %}" > Post Ads</a>
-    <a href="#footer" > About</a>
-   <form method="get" action="{%url 'search' %}">
-
-                    <input type="text" name="q" placeholder="search">
-
-
-      </form>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <div class="container" onclick="myFunctionx(this)">
-              <div class="bar1"></div>
-              <div class="bar2"></div>
-              <div class="bar3"></div>
-        </div>
-    </a>
-
-
-</div>
-
-<br>
-<br>
-<br>
-
 <div class="container">
+        <div class="header">
+            <h1 class="logo">CampusBuy</h1>
+            <nav id="navLinks" class="navLinks">
+                <a href="javascript:void(0)" class="hide-desktop" id="menu" class="menu">&#9776;</a>
+                <ul class="show-desktop hide-mobile" id="nav">
+                    <li id="exit" class="exit-btn hide-desktop">&times;</li>
+                    <li><a href="{%url 'Homepage' %}">Home</></li>
+                    <li><a class="active" href="{%url 'PostAd' %}">Post Ad</a></li>
+                    <li><a href="{%url 'Homepage'%}#categorySection">Look Up Ad</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li class="search"><a href="{%url 'search' %}"><img src="assets/search.svg" alt=""></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="containerBody">
+            <div class="left">
+                <h1>post ads</h1>
+                <p>Fill in the form below to post an advert</p>
+            </div>
 
-<div class="wrapa">
 
-	    <form class="MyForm-control" method="POST" enctype="multipart/form-data">
+	    <form action="#" method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 
-	    		<h4 style="font-family:'Coda', cursive; ">Post Your Ad!</h4>
+            {{ form.as_p }}
 
-				<hr>
 
-		        {{ form.as_p }}
-		        <input type="submit"  class="btn btn-success">
+            <input type="submit"  value="Submit">
 
 
 
 	     </form>
 
 
+        </div>
+
 </div>
-</div>
-
-
-
-
-<br>
-<br>
 
     {% endblock %}
 

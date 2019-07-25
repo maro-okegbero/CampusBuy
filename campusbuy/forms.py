@@ -6,4 +6,5 @@ class PostAdForm(forms.ModelForm):
 
     class Meta:
         model = Advert
-        fields = ['category', 'Seller_Name', 'image', 'Item', 'Description', 'Asking_Price', 'Phone_Number', 'Location']
+        fields = ['Seller_Name', 'category', 'Item', 'Asking_Price',
+                  'Description', 'image',  'Phone_Number', 'Location']
