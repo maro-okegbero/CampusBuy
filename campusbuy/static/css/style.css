@@ -3,6 +3,14 @@ html, body {
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
 }
+
+
+@media (min-width: 1025px) and (max-width: 1280px){
+    body {
+      display:none ;}
+    }
+
+
 * {
     margin: 0;
     padding: 0;
