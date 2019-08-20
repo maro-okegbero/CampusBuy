@@ -39,13 +39,13 @@ html, body {
     }
 
 a {
-    color: var(--color) !important;
+    color: #000000;
     font-weight: 400;
     transition: ease-in-out .5s;
 }
 a:hover {
     color: var(--color);
-    text-decoration: none;
+    text-decoration: none !important;
 }
 .container{
     background: #f4f4f4;
@@ -83,7 +83,13 @@ nav ul li a{
     display: block;
     width: 100%;
     padding: 1em 2em;
+    text-decoration: none !important;
 }
+
+nav ul li a:hover{
+    text-decoration: none;
+}
+
 .exit-btn{
     margin-bottom: 1em;
     margin-top: -1.3em;
