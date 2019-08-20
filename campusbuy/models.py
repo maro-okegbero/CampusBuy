@@ -34,15 +34,15 @@ class Advert(models.Model):
     HALL3 = 'HALL3'
     HALL2 = 'HALL2'
     HALL1 = 'HALL1'
-    MAIN_GATE = 'MAIN_GATE'
-    GREEN_PARK = 'GREEN_PARK'
+    MAIN_GATE = 'Main Gate'
+    GREEN_PARK = 'Green Park'
     GTBANK = 'GTBANK'
-    NAAS_GARDEN = 'NAAS_GARDEN'
-    PHYSICAL_SCIENCE_COMPLEX = 'PHYSICAL_SCIENCE_COM'
-    MEDICAL_SCIENCE_COMPLEX = 'MED_COM'
-    BASEMENT = 'BASEMENT'
+    NAAS_GARDEN = 'NAAS Garden'
+    PHYSICAL_SCIENCE_COMPLEX = 'Physical Science Complex'
+    MEDICAL_SCIENCE_COMPLEX = 'Med Complex'
+    BASEMENT = 'Basement'
     JUNE12 = 'JUNE12'
-    ENGINEERING = 'ENGINEERING_PARK'
+    ENGINEERING = 'Engineering Park'
 
 
 
@@ -57,8 +57,8 @@ class Advert(models.Model):
         (GREEN_PARK, 'Green Park'),
         (GTBANK, 'GTBank Wifi Spot'),
         (NAAS_GARDEN, 'Naas Garden'),
-        (Physical_Science_Complex, 'Physical Science Complex'),
-        (Medical_Science_Complex, 'Medical Science Complex'),
+        (PHYSICAL_SCIENCE_COMPLEX, 'Physical Science Complex'),
+        (MEDICAL_SCIENCE_COMPLEX, 'Medical Science Complex'),
         (BASEMENT,'Basement'),
         (JUNE12, 'June12'),
         (ENGINEERING, 'Engineering Park')
