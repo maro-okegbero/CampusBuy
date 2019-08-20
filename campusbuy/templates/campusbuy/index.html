@@ -3,7 +3,7 @@
 
 <div class="container">
         <div class="header">
-            <h1 class="logo">CampusBuy</h1>
+            <h1 class="logo"><a href="{%url 'Homepage' %}">CampusBuy</a></h1>
             <nav id="navLinks" class="navLinks">
                 <a href="javascript:void(0)" class="hide-desktop" id="menu" class="menu">&#9776;</a>
                 <ul class="show-desktop hide-mobile" id="nav">
@@ -35,10 +35,10 @@
         <div class="categories">
     {% for category in Categories %}
             <div class="categoriesBox {{ category.Name }}">
-                <img alt="Ad Image" src="{{MEDIA_URL}}{{category.Category_Logo.url}}">
+                <img alt="Category Image" src="{{MEDIA_URL}}{{category.Category_Logo.url}}">
                 <h4>{{ category.Name }}</h4>
                 <p>{{ category.Details }}</p>
-                <a class="post" href="{{ category.Name }}">View Ad</a>
+                <a style="text-decoration: none;" class="post" href="{{ category.Name }}">View Ad</a>
             </div>
      {% endfor %}
         </div>

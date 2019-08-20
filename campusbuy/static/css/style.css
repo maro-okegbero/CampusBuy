@@ -39,12 +39,13 @@ html, body {
     }
 
 a {
-    color: #000000;
+    color: var(--color);
     font-weight: 400;
     transition: ease-in-out .5s;
 }
 a:hover {
     color: var(--color);
+    text-decoration: none;
 }
 .container{
     background: #f4f4f4;

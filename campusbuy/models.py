@@ -62,8 +62,8 @@ class Advert(models.Model):
     # Special Cloudinary image Field
     image = CloudinaryField('image')
 
-    Item = models.CharField(max_length=20, blank=False, null=False)
-    Location = models.CharField(max_length=10, choices=Location_Choices, default=HALL3, blank=False,  help_text='<p style="color: red; font: italic 12px tahoma;">**Choose a location where you can easily meet up with potential buyers</p>')
+    Item = models.CharField(max_length=70, blank=False, null=False)
+    Location = models.CharField(max_length=70,choices=Location_Choices, default=HALL3, blank=False,  help_text='<p style="color: red; font: italic 12px tahoma;">**Choose a location where you can easily meet up with potential buyers</p>')
     Description = models.TextField(max_length=250, blank=False, null=False)
     Asking_Price = models.IntegerField(blank=False, null=False)
     published_date = models.DateTimeField(blank=False, default=timezone.now)
