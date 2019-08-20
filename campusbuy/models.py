@@ -5,6 +5,17 @@ from phonenumber_field.modelfields import PhoneNumberField
 import PIL.Image as Image
 
 
+#def formfield(self, **kwargs):
+    # Passing max_length to forms.CharField means that the value's length
+    # will be validated twice. This is considered acceptable since we want
+    # the value in the form field (to pass into widget for example).
+ #   defaults = {'max_length': self.max_length}
+    # TODO: Handle multiple backends with different feature flags.
+    #if self.null and not connection.features.interprets_empty_strings_as_nulls:
+    #    defaults['empty_value'] = None
+   # defaults.update(kwargs)
+  #  return super().formfield(**defaults)
+
 
 # Create your models here.
 
@@ -46,8 +57,8 @@ class Advert(models.Model):
         (GREEN_PARK, 'Green Park'),
         (GTBANK, 'GTBank Wifi Spot'),
         (NAAS_GARDEN, 'Naas Garden'),
-        (PHYSICAL_SCIENCE_COMPLEX, 'Physical Science Complex'),
-        (MEDICAL_SCIENCE_COMPLEX, 'Medical Science Complex'),
+        (Physical_Science_Complex, 'Physical Science Complex'),
+        (Medical_Science_Complex, 'Medical Science Complex'),
         (BASEMENT,'Basement'),
         (JUNE12, 'June12'),
         (ENGINEERING, 'Engineering Park')
@@ -63,7 +74,8 @@ class Advert(models.Model):
     image = CloudinaryField('image')
 
     Item = models.CharField(max_length=70, blank=False, null=False)
-    Location = models.CharField(max_length=70,choices=Location_Choices, default=HALL3, blank=False,  help_text='<p style="color: red; font: italic 12px tahoma;">**Choose a location where you can easily meet up with potential buyers</p>')
+    Location = models.TextField(max_length=250, choices=Location_Choices, default=HALL3, blank=False,  help_text='<p style="color: red; font: italic 12px tahoma;">'
+    '**Choose a location where you can easily meet up with potential buyers</p>')
     Description = models.TextField(max_length=250, blank=False, null=False)
     Asking_Price = models.IntegerField(blank=False, null=False)
     published_date = models.DateTimeField(blank=False, default=timezone.now)

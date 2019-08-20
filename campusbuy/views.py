@@ -47,6 +47,8 @@ def PostAd(request):
                 post.published_date = timezone.now()
                 post.save()
                 return redirect('Homepage')
+            else:
+                return  render('<h1> Hold on a minute, something went wrong. Try posting again</h1>')
 
         else:
 
