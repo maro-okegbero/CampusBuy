@@ -25,6 +25,8 @@ urlpatterns = [
     path('', include('campusbuy.urls')),
 ]
 
+handler404 = 'campusbuy.views.handler404'
+
 
 if settings.DEBUG:
 

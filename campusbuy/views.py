@@ -36,8 +36,6 @@ def ViewAd(request, category_name):
     except Category.DoesNotExist:
         raise Http404("Category Does Not Exist")
 
-
-
 def PostAd(request):
 
         if request.method == "POST":
@@ -64,3 +62,9 @@ def search(request):
         results = Advert.objects.filter(Seller_Name__startswith="/")
 
     return render(request, 'campusbuy/search.html', {'results': results})
+
+
+def handler404(request, exception,template_name="404_Error.html"):
+    response = render_to_response("campusbuy/404_Error.html")
+    response.status_code = 404
+    return response
