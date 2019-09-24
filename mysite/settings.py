@@ -24,9 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-env = Env()
-env.read_env()
-SECRET_KEY = env.str("SECRET_KEY")
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -52,10 +50,9 @@ INSTALLED_APPS = [
     ]
 
 cloudinary.config(
-  cloud_name = env.str("CLOUD_NAME"),
-  api_key = env.str("API_KEY"),
-  api_secret = env.str("API_SECRET"),
-
+  cloud_name="campusbuy",
+  api_key="766124729178135",
+  api_secret="Pac3Elo7dI32V-MDYyDXYI4q5Qk"
 )
 
 
