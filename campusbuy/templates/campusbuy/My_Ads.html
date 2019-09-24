@@ -68,7 +68,7 @@
               {% endif %}
               {% for i in categories.paginator.page_range %}
                 {% if categories.number == i %}
-                  <a class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
+                  <a class="is-active"><span>{{ i }} <span class="sr-only">(current)</span></span></a>
                 {% else %}
                   <a href="?page={{ i }}">{{ i }}</a>
                 {% endif %}
