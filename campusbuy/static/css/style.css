@@ -107,6 +107,21 @@ nav ul li a:hover{
   color: #222;
 }
 
+.p1 a{
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  text-align: center;
+}
+
+.p1 a.is-active{
+  background-color: #2ecc71;
+  border-radius: 100%;
+  color: #fff;
+}
+
+
 .exit-btn{
     margin-bottom: 1em;
     margin-top: -1.3em;
