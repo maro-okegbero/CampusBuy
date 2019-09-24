@@ -12,10 +12,10 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import dj_database_url
-import cloudinary
-import cloudinary.uploader
+#import cloudinary
+#import cloudinary.uploader
 import cloudinary.api
-
+from environs import Env
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,7 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$-1%w5fwoea+$_h_iqb!&5-5*vw^puya74k(@e09cs1zbd2kyb'
+env = Env()
+env.read_env()
+SECRET_KEY = env.str("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -50,9 +52,10 @@ INSTALLED_APPS = [
     ]
 
 cloudinary.config(
-  cloud_name = "campusbuy",
-  api_key = "766124729178135",
-  api_secret = "Pac3Elo7dI32V-MDYyDXYI4q5Qk"
+  cloud_name = env.str("CLOUD_NAME"),
+  api_key = env.str("API_KEY"),
+  api_secret = env.str("API_SECRET"),
+
 )
 
 
