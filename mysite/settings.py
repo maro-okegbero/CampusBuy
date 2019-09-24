@@ -97,8 +97,8 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'campusbuy',
-        'USER': 'postgres',
-        'PASSWORD': 'orangesquash',
+        'USER': 'maro',
+        'PASSWORD': 'guido van rossum',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -148,7 +148,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'campusbuy/static')
 
 
 
