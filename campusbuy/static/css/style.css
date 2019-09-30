@@ -12,13 +12,14 @@ html, body {
 
 
 * {
-    margin-left: -1px;
+    margin-left: 0px;
     padding: 0;
     list-style: none;
     text-decoration: none;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     --color: #99d0ef;
+    overflow: auto;
 }
 
 /* Code for loading icon .This only works with JavaScript,
