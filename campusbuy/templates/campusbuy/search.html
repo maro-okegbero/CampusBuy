@@ -36,8 +36,11 @@
                    <h3 >Results</h3>
 <hr>
 <div  class="maincategorySection">
-        <h2 style="padding-top: 0px; padding-bottom: 0px;">{{category}}</h2>
-        <p>Here's the list of ads that match your search</p>
+        {% if results %}
+            <h2 style="padding-top: 0px; padding-bottom: 0px;">{{category}}</h2>
+            <p>Here's the list of ads that match your search</p>
+        {% endif %}
+
     {% for item in results %}
                             {% load humanize %}
                             {% load nigerian %}
