@@ -107,6 +107,22 @@ nav ul li a:hover{
   color: #222;
 }
 
+#nopost{
+    color: #fff;
+    background: var(--color);
+<<<<<<< HEAD
+    padding: .7em 5.5em;
+=======
+    padding: .7em 1.5em;
+>>>>>>> 4a335569fad51967fa980af6e66c3e253c29bc1f
+    border-radius: 5px;
+    transition: ease-in-out .5s;
+    font-weight: 500;
+}
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4a335569fad51967fa980af6e66c3e253c29bc1f
 .p1 a{
   width: 40px;
   height: 40px;

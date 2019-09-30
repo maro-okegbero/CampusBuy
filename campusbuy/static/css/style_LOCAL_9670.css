@@ -107,6 +107,15 @@ nav ul li a:hover{
   color: #222;
 }
 
+#nopost{
+    color: #fff;
+    background: var(--color);
+    padding: .7em 5.5em;
+    border-radius: 5px;
+    transition: ease-in-out .5s;
+    font-weight: 500;
+}
+
 .p1 a{
   width: 40px;
   height: 40px;

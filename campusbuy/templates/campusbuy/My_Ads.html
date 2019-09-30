@@ -26,12 +26,17 @@
 
 <div class="maincategorySection">
         <h2>{{category}}</h2>
+<<<<<<< HEAD
     {% if categories %}
         <p>Here's a list of the available items under the {{category}} category</p>
     {% endif %}
+=======
+
+>>>>>>> 4a335569fad51967fa980af6e66c3e253c29bc1f
     {% for ads in categories %}
                             {% load humanize %}
                             {% load nigerian %}
+         <p>Here's a list of the available items under the {{category}} category</p>
         <div class="categories">
             <div class="categoriesBox {{category}}">
 
@@ -54,8 +59,12 @@
 
         </div>
             {% empty %}
+<<<<<<< HEAD
             <p>Sorry &#128580; ,there's no ad
                 placement in this category right now but you can be the first to place one &#128512;</p>
+=======
+            <p>Sorry &#128580; ,there's no ad placement in this  category but You can be the first to place one &#128512;</p>
+>>>>>>> 4a335569fad51967fa980af6e66c3e253c29bc1f
 
                  <a id="nopost" href="{%url 'PostAd' %}">Post an Ad!</a>
 
