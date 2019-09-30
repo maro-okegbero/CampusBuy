@@ -35,6 +35,22 @@
 
 <body id="body">
 
+<div class="container">
+        <div class="header">
+            <h1 class="logo"><a style="color: #99d0ef;" href="{%url 'Homepage' %}">CampusBuy</a></h1>
+            <nav id="navLinks" class="navLinks">
+                <a href="javascript:void(0)" class="hide-desktop" id="menu" class="menu">&#9776;</a>
+                <ul class="show-desktop hide-mobile" id="nav">
+                    <li id="exit" class="exit-btn hide-desktop">&times;</li>
+                    <li><a class="active" href="{% url 'Homepage' %}">Home</a></li>
+                    <li><a href="{%url 'PostAd' %}">Post Ad</a></li>
+                    <li><a href="{% url 'Homepage' %}#categorySection">Look Up Ad</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li class="search"><a href="{%url 'search' %}">
+                        <img src="static/assets/search.svg" alt=""></a></li>
+                </ul>
+            </nav>
+        </div>
 
 
 
@@ -47,7 +63,7 @@
 
 
         
-   <footer class="footer">
+   <footer class="footer" id="contact">
         <div class="footerSection">
             <div class="about">
                 <h3>About</h3>
