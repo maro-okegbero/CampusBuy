@@ -110,7 +110,7 @@ nav ul li a:hover{
 #nopost{
     color: #fff;
     background: var(--color);
-    padding: .7em 5.5em;
+    padding: .7em 4.5em;
     border-radius: 5px;
     transition: ease-in-out .5s;
     font-weight: 500;
