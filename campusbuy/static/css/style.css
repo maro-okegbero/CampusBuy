@@ -56,6 +56,12 @@ a:hover {
     display: flex;
     justify-content: space-between;
 }
+
+.Error404{
+    margin-bottom: 80px;
+    margin-top: 80px;
+    font-family: 'Montserrat', sans-serif;
+}
 .container .header .logo{
     grid-area: logo;
     color: var(--color);
