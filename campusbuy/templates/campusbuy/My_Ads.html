@@ -26,7 +26,9 @@
 
 <div class="maincategorySection">
         <h2>{{category}}</h2>
+    {% if categories %}
         <p>Here's a list of the available items under the {{category}} category</p>
+    {% endif %}
     {% for ads in categories %}
                             {% load humanize %}
                             {% load nigerian %}
@@ -51,6 +53,13 @@
             </div>
 
         </div>
+            {% empty %}
+            <p>Sorry &#128580; ,there's no ad
+                placement in this category right now but you can be the first to place one &#128512;</p>
+
+                 <a id="nopost" href="{%url 'PostAd' %}">Post an Ad!</a>
+
+
             {% endfor %}
     </div>
 
