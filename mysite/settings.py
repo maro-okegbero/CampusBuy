@@ -99,7 +99,7 @@ DATABASES = {
 'default': {
 
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'campusbuy',
+        'NAME': 'oldcampusbuy',
         'USER': 'maro',
         'PASSWORD': 'guido van rossum',
         'HOST': 'localhost',
